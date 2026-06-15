@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://d16ilfvy4mv02r.cloudfront.net/workspaces/MgHpDzkGBMurn20TDNGFLRlojw5Ad8VH/3d83daa6-738a-4a78-b3f8-03b8bec2680c/files/">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="NexGen Tech — Futuristic high-tech services, laser scanning, and cutting-edge solutions."/>
+<title>NexGen Tech | Futuristic Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<script src="https://js.stripe.com/v3/"></script>
+<style>
+/* ══ CSS VARIABLES & THEMES ══ */
+:root{
+  --neon:#00f5ff;
+  --neon2:#bf00ff;
+  --neon3:#00ff88;
+  --dark:#050a14;
+  --dark2:#0a1628;
+  --dark3:#0f2040;
+  --card:#0d1a2e;
+  --card2:#111f35;
+  --text:#e8f4fd;
+  --muted:#7a9bb8;
+  --border:#1a3050;
+  --gradient:linear-gradient(135deg,#00f5ff,#bf00ff);
+  --shadow-neon:0 0 20px rgba(0,245,255,0.3);
+  --shadow-neon2:0 0 20px rgba(191,0,255,0.3);
+  --bg-overlay:rgba(5,10,20,0.9);
+}
+/* THEME: EMERALD */
+body.theme-emerald{
+  --neon:#00ff88;--neon2:#00cfaa;--neon3:#a8ff00;
+  --dark:#03100a;--dark2:#061a0f;--dark3:#0a2a15;
+  --card:#0a1f10;--card2:#0d2415;--border:#0f3020;
+  --gradient:linear-gradient(135deg,#00ff88,#00cfaa);
+  --shadow-neon:0 0 20px rgba(0,255,136,0.3);
+  --shadow-neon2:0 0 20px rgba(0,207,170,0.3);
+  --bg-overlay:rgba(3,16,10,0.9);
+}
+/* THEME: SUNSET */
+body.theme-sunset{
+  --neon:#ff6b35;--neon2:#ff2d7a;--neon3:#ffbe00;
+  --dark:#140805;--dark2:#200d08;--dark3:#301508;
+  --card:#1e0e08;--card2:#251108;--border:#3a1a0a;
+  --gradient:linear-gradient(135deg,#ff6b35,#ff2d7a);
+  --shadow-neon:0 0 20px rgba(255,107,53,0.3);
+  --shadow-neon2:0 0 20px rgba(255,45,122,0.3);
+  --bg-overlay:rgba(20,8,5,0.9);
+}
+/* THEME: GALAXY */
+body.theme-galaxy{
+  --neon:#c084fc;--neon2:#f472b6;--neon3:#a5f3fc;
+  --dark:#080510;--dark2:#100a1e;--dark3:#160e2e;
+  --card:#120d20;--card2:#160f26;--border:#2a1850;
+  --gradient:linear-gradient(135deg,#c084fc,#f472b6);
+  --shadow-neon:0 0 20px rgba(192,132,252,0.3);
+  --shadow-neon2:0 0 20px rgba(244,114,182,0.3);
+  --bg-overlay:rgba(8,5,16,0.9);
+}
+/* THEME: GOLD */
+body.theme-gold{
+  --neon:#ffd700;--neon2:#ff8c00;--neon3:#fffacd;
+  --dark:#100c00;--dark2:#1a1400;--dark3:#241e00;
+  --card:#1a1500;--card2:#201a00;--border:#3a3000;
+  --gradient:linear-gradient(135deg,#ffd700,#ff8c00);
+  --shadow-neon:0 0 20px rgba(255,215,0,0.3);
+  --shadow-neon2:0 0 20px rgba(255,140,0,0.3);
+  --bg-overlay:rgba(16,12,0,0.9);
+}
+/* THEME: ICE */
+body.theme-ice{
+  --neon:#e0f7ff;--neon2:#7dd3fc;--neon3:#bae6fd;
+  --dark:#02080f;--dark2:#050f1a;--dark3:#071424;
+  --card:#061020;--card2:#081428;--border:#0e2038;
+  --gradient:linear-gradient(135deg,#7dd3fc,#e0f7ff);
+  --shadow-neon:0 0 20px rgba(125,211,252,0.3);
+  --shadow-neon2:0 0 20px rgba(224,247,255,0.3);
+  --bg-overlay:rgba(2,8,15,0.9);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;transition:background .5s,color .5s;}
+h1,h2,h3,.brand-name,.nav-logo-text{font-family:'Orbitron',monospace;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--dark2);}
+::-webkit-scrollbar-thumb{background:var(--neon);border-radius:3px;}
+
+/* PARTICLES */
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden;}
+.particle{position:absolute;border-radius:50%;animation:float linear infinite;opacity:.4;}
+@keyframes float{0%{transform:translateY(100vh) rotate(0deg);opacity:0;}10%{opacity:.4;}90%{opacity:.2;}100%{transform:translateY(-10vh) rotate(720deg);opacity:0;}}
+.grid-overlay{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(0,245,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,0.03) 1px,transparent 1px);background-size:50px 50px;}
+
+/* ══════════ LOADER ══════════ */
+#loader{position:fixed;inset:0;background:var(--dark);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s;}
+#loader.hidden{opacity:0;pointer-events:none;}
+.loader-logo{font-size:2rem;font-family:'Orbitron',monospace;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:32px;animation:flicker 1.5s ease-in-out infinite;}
+@keyframes flicker{0%,100%{opacity:1;}50%{opacity:.7;}}
+.loader-bar{width:260px;height:3px;background:var(--dark2);border-radius:3px;overflow:hidden;}
+.loader-fill{height:100%;background:var(--gradient);border-radius:3px;animation:loadFill 2.2s ease-in-out forwards;}
+@keyframes loadFill{0%{width:0;}100%{width:100%;}}
+.loader-text{margin-top:14px;font-size:.75rem;font-family:'Orbitron',monospace;color:var(--muted);letter-spacing:.15em;animation:blink 1s ease infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+/* ══════════ AGE GATE ══════════ */
+#age-gate{position:fixed;inset:0;z-index:10000;background:var(--dark);display:flex;align-items:center;justify-content:center;flex-direction:column;}
+.age-box{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:52px 44px;max-width:480px;width:100%;text-align:center;position:relative;box-shadow:0 0 80px rgba(0,245,255,0.08);}
+.age-box::before{content:'';position:absolute;inset:0;border-radius:24px;padding:1px;background:var(--gradient);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+.age-icon{font-size:3.5rem;margin-bottom:20px;display:block;}
+.age-box h2{font-size:1.8rem;margin-bottom:10px;}
+.age-box p{color:var(--muted);font-size:.9rem;line-height:1.6;margin-bottom:32px;}
+.age-select-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;}
+.age-btn{padding:14px 10px;background:var(--dark2);border:1px solid var(--border);border-radius:12px;color:var(--text);font-size:.95rem;font-weight:600;cursor:pointer;transition:.3s;font-family:'Orbitron',monospace;}
+.age-btn:hover,.age-btn.selected{border-color:var(--neon);color:var(--neon);background:rgba(0,245,255,0.06);box-shadow:var(--shadow-neon);}
+.age-btn.danger:hover{border-color:#ff4444;color:#ff4444;background:rgba(255,68,68,0.06);}
+.age-proceed{width:100%;padding:15px;background:var(--gradient);border:none;border-radius:12px;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Orbitron',monospace;letter-spacing:.05em;transition:.3s;margin-bottom:14px;}
+.age-proceed:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,245,255,0.4);}
+.age-proceed:disabled{opacity:.4;cursor:not-allowed;transform:none;}
+.age-deny{color:var(--muted);font-size:.82rem;margin-top:8px;display:none;}
+.age-warning{background:rgba(255,68,68,0.08);border:1px solid rgba(255,68,68,0.2);border-radius:10px;padding:12px 16px;font-size:.82rem;color:#ff7777;margin-top:14px;display:none;}
+
+/* ══════════ AUTH OVERLAY ══════════ */
+#auth-overlay{position:fixed;inset:0;z-index:9999;background:var(--dark);display:none;align-items:center;justify-content:center;}
+#auth-overlay.show{display:flex;}
+.auth-box{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:48px 40px;width:100%;max-width:440px;position:relative;box-shadow:0 0 60px rgba(0,245,255,0.1);}
+.auth-box::before{content:'';position:absolute;inset:0;border-radius:20px;padding:1px;background:var(--gradient);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+.auth-logo{text-align:center;margin-bottom:32px;}
+.auth-logo .logo-icon{width:70px;height:70px;background:var(--gradient);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:28px;color:#fff;margin-bottom:12px;box-shadow:var(--shadow-neon);}
+.auth-logo h2{font-size:1.6rem;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.auth-tabs{display:flex;gap:0;margin-bottom:32px;border-radius:10px;overflow:hidden;border:1px solid var(--border);}
+.auth-tab{flex:1;padding:12px;text-align:center;cursor:pointer;font-size:.9rem;font-weight:600;transition:.3s;background:transparent;color:var(--muted);}
+.auth-tab.active{background:var(--gradient);color:#fff;}
+.auth-form{display:none;}
+.auth-form.active{display:block;}
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:.82rem;color:var(--muted);margin-bottom:7px;text-transform:uppercase;letter-spacing:.05em;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:13px 16px;background:var(--dark2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:.95rem;transition:.3s;font-family:'Inter',sans-serif;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--neon);box-shadow:0 0 12px rgba(0,245,255,0.2);}
+.btn-primary{width:100%;padding:14px;background:var(--gradient);border:none;border-radius:12px;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Orbitron',monospace;letter-spacing:.05em;transition:.3s;position:relative;overflow:hidden;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,245,255,0.4);}
+.auth-divider{text-align:center;margin:16px 0;color:var(--muted);font-size:.85rem;}
+.social-login{display:flex;gap:10px;margin-bottom:20px;}
+.social-btn{flex:1;padding:11px;background:var(--dark2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:.3s;}
+.social-btn:hover{border-color:var(--neon);color:var(--neon);}
+.auth-footer{text-align:center;margin-top:20px;font-size:.85rem;color:var(--muted);}
+.auth-footer a{color:var(--neon);text-decoration:none;}
+
+/* ══════════ NAV ══════════ */
+#main-site{display:none;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;background:var(--bg-overlay);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:.3s;}
+nav.scrolled{box-shadow:0 4px 30px rgba(0,245,255,0.1);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo-icon{width:40px;height:40px;background:var(--gradient);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;box-shadow:var(--shadow-neon);overflow:hidden;}
+.nav-logo-icon img{width:100%;height:100%;object-fit:cover;border-radius:8px;}
+.nav-logo-text{font-size:1.2rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:500;transition:.3s;position:relative;letter-spacing:.03em;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gradient);transition:.3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--neon);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-actions{display:flex;align-items:center;gap:10px;}
+.btn-nav{padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600;cursor:pointer;transition:.3s;font-family:'Orbitron',monospace;}
+.btn-outline{background:transparent;border:1px solid var(--neon);color:var(--neon);}
+.btn-outline:hover{background:var(--neon);color:var(--dark);}
+.btn-solid{background:var(--gradient);border:none;color:#fff;box-shadow:var(--shadow-neon);}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,245,255,0.4);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--neon);border-radius:2px;transition:.3s;}
+.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:var(--bg-overlay);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:20px;z-index:999;}
+.mobile-menu.open{display:block;}
+.mobile-menu a{display:block;padding:12px 0;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);font-size:.95rem;}
+.mobile-menu a:hover{color:var(--neon);}
+
+/* ══════════ HERO ══════════ */
+#home{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:100px 40px 60px;text-align:center;}
+.hero-content{position:relative;z-index:2;max-width:900px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,245,255,0.1);border:1px solid rgba(0,245,255,0.3);border-radius:50px;padding:8px 20px;font-size:.8rem;color:var(--neon);margin-bottom:28px;animation:fadeInDown .8s ease;}
+.hero-badge .dot{width:8px;height:8px;background:var(--neon);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.3);}}
+.hero-title{font-size:clamp(2.5rem,6vw,5rem);font-weight:900;line-height:1.1;margin-bottom:24px;animation:fadeInUp .8s ease .2s both;}
+.hero-title span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:clamp(1rem,2vw,1.3rem);color:var(--muted);max-width:600px;margin:0 auto 40px;line-height:1.7;animation:fadeInUp .8s ease .4s both;}
+.hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeInUp .8s ease .6s both;}
+.btn-hero-primary{padding:16px 36px;background:var(--gradient);border:none;border-radius:12px;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Orbitron',monospace;letter-spacing:.05em;transition:.3s;box-shadow:var(--shadow-neon);}
+.btn-hero-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,245,255,0.4);}
+.btn-hero-secondary{padding:16px 36px;background:transparent;border:1px solid var(--border);border-radius:12px;color:var(--text);font-size:1rem;font-weight:600;cursor:pointer;transition:.3s;}
+.btn-hero-secondary:hover{border-color:var(--neon);color:var(--neon);}
+.hero-stats{display:flex;gap:48px;justify-content:center;margin-top:60px;flex-wrap:wrap;animation:fadeInUp .8s ease .8s both;}
+.hero-stat .number{font-size:2rem;font-weight:700;font-family:'Orbitron',monospace;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-stat .label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);animation:orbFloat 8s ease-in-out infinite;}
+.hero-orb1{width:400px;height:400px;background:radial-gradient(circle,rgba(0,245,255,0.15),transparent);top:-100px;left:-100px;}
+.hero-orb2{width:300px;height:300px;background:radial-gradient(circle,rgba(191,0,255,0.15),transparent);bottom:-50px;right:-50px;animation-delay:-4s;}
+@keyframes orbFloat{0%,100%{transform:translate(0,0);}50%{transform:translate(30px,-30px);}}
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ══════════ SECTION GENERAL ══════════ */
+section{padding:100px 40px;position:relative;z-index:1;}
+.section-header{text-align:center;margin-bottom:64px;}
+.section-tag{display:inline-block;font-size:.75rem;font-family:'Orbitron',monospace;color:var(--neon);text-transform:uppercase;letter-spacing:.15em;margin-bottom:12px;background:rgba(0,245,255,0.08);padding:5px 14px;border-radius:20px;border:1px solid rgba(0,245,255,0.2);}
+.section-title{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;margin-bottom:16px;}
+.section-title span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.section-sub{color:var(--muted);max-width:560px;margin:0 auto;line-height:1.7;}
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--neon),transparent);margin:0;}
+
+/* ══════════ VIDEO GUIDE ══════════ */
+#video-guide{background:var(--dark2);padding:100px 40px;}
+.video-container{max-width:900px;margin:0 auto;}
+.video-player{position:relative;background:#000;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:0 0 60px rgba(0,245,255,0.12);aspect-ratio:16/9;}
+.video-player canvas{width:100%;height:100%;display:block;}
+.video-controls{display:flex;align-items:center;gap:14px;padding:14px 20px;background:var(--card);border-top:1px solid var(--border);}
+.vc-play{width:38px;height:38px;background:var(--gradient);border:none;border-radius:50%;color:#fff;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.2s;}
+.vc-play:hover{transform:scale(1.1);}
+.vc-progress{flex:1;height:5px;background:var(--border);border-radius:5px;cursor:pointer;position:relative;}
+.vc-bar{height:100%;background:var(--gradient);border-radius:5px;width:0%;transition:.3s;}
+.vc-time{font-size:.8rem;color:var(--muted);font-family:'Orbitron',monospace;white-space:nowrap;}
+.vc-vol{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;padding:4px;transition:.3s;}
+.vc-vol:hover{color:var(--neon);}
+.vc-fs{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;padding:4px;transition:.3s;}
+.vc-fs:hover{color:var(--neon);}
+.video-chapters{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:20px;}
+.chapter-btn{padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:10px;color:var(--muted);font-size:.82rem;cursor:pointer;text-align:left;transition:.3s;display:flex;gap:10px;align-items:center;}
+.chapter-btn:hover,.chapter-btn.active-ch{border-color:var(--neon);color:var(--neon);background:rgba(0,245,255,0.05);}
+.chapter-btn .ch-time{font-family:'Orbitron',monospace;font-size:.7rem;color:var(--neon);min-width:34px;}
+
+/* ══════════ BACKGROUND THEME PICKER ══════════ */
+#theme-picker{position:fixed;bottom:90px;right:24px;z-index:800;}
+.theme-toggle-btn{width:48px;height:48px;background:var(--gradient);border:none;border-radius:50%;color:#fff;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 20px rgba(0,245,255,0.4);transition:.3s;display:flex;align-items:center;justify-content:center;}
+.theme-toggle-btn:hover{transform:scale(1.1) rotate(20deg);}
+.theme-panel{position:absolute;bottom:60px;right:0;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;width:260px;box-shadow:0 10px 40px rgba(0,0,0,0.5);display:none;backdrop-filter:blur(20px);}
+.theme-panel.open{display:block;animation:fadeInUp .3s ease;}
+.theme-panel h4{font-size:.8rem;font-family:'Orbitron',monospace;color:var(--neon);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;}
+.theme-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.theme-option{padding:10px 12px;border-radius:10px;border:2px solid var(--border);cursor:pointer;transition:.3s;display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--text);}
+.theme-option:hover{border-color:var(--neon);}
+.theme-option.active{border-color:var(--neon);background:rgba(0,245,255,0.06);}
+.theme-swatch{width:20px;height:20px;border-radius:50%;flex-shrink:0;}
+
+/* BG PATTERN SECTION */
+#bg-settings{background:var(--dark2);}
+.bg-options-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;max-width:900px;margin:0 auto;}
+.bg-option{border:2px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:.3s;}
+.bg-option:hover,.bg-option.active{border-color:var(--neon);box-shadow:var(--shadow-neon);}
+.bg-preview{height:90px;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:600;}
+.bg-option p{text-align:center;padding:10px;font-size:.8rem;color:var(--muted);}
+.bg-option.active p{color:var(--neon);}
+
+/* ══════════ SERVICES ══════════ */
+#services{background:var(--dark2);}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;transition:.4s;position:relative;overflow:hidden;cursor:pointer;}
+.service-card:hover{border-color:var(--neon);transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,245,255,0.1);}
+.service-icon{width:60px;height:60px;background:rgba(0,245,255,0.1);border:1px solid rgba(0,245,255,0.2);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--neon);margin-bottom:20px;transition:.4s;}
+.service-card h3{font-size:1.1rem;font-weight:600;margin-bottom:10px;}
+.service-card p{color:var(--muted);font-size:.9rem;line-height:1.6;}
+.service-tag{display:inline-block;margin-top:16px;font-size:.75rem;padding:4px 12px;background:rgba(0,245,255,0.08);color:var(--neon);border-radius:20px;border:1px solid rgba(0,245,255,0.2);}
+
+/* ══════════ SCANNER ══════════ */
+#scanner{background:var(--dark);}
+.scanner-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto;}
+.scanner-info h3{font-size:1.6rem;margin-bottom:16px;}
+.scanner-info p{color:var(--muted);line-height:1.7;margin-bottom:24px;}
+.scanner-features{list-style:none;margin-bottom:32px;}
+.scanner-features li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);color:var(--muted);font-size:.9rem;}
+.scanner-features li i{color:var(--neon3);font-size:.8rem;}
+.scanner-ui{position:relative;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;text-align:center;overflow:hidden;min-height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.eye-container{position:relative;width:180px;height:180px;margin:0 auto 28px;}
+.eye-outer{width:180px;height:180px;border-radius:50%;border:2px solid rgba(0,245,255,0.3);position:absolute;animation:rotateRing 4s linear infinite;}
+.eye-outer2{width:160px;height:160px;top:10px;left:10px;border:1px solid rgba(191,0,255,0.3);position:absolute;animation:rotateRing 6s linear infinite reverse;}
+.eye-circle{width:140px;height:140px;background:radial-gradient(circle,rgba(0,245,255,0.1),var(--card));border:2px solid rgba(0,245,255,0.4);border-radius:50%;position:absolute;top:20px;left:20px;display:flex;align-items:center;justify-content:center;}
+.eye-pupil{width:50px;height:50px;background:var(--gradient);border-radius:50%;box-shadow:0 0 30px rgba(0,245,255,0.6);}
+.scan-line{position:absolute;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--neon),transparent);top:50%;left:0;animation:scanMove 2s ease-in-out infinite;opacity:0;}
+.scan-line.active{opacity:1;}
+@keyframes rotateRing{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+@keyframes scanMove{0%,100%{top:10%;opacity:0;}10%,90%{opacity:1;}50%{top:90%;}}
+.corner-br,.corner-tl,.corner-tr,.corner-bl{position:absolute;width:20px;height:20px;border-color:var(--neon);border-style:solid;}
+.corner-tl{top:16px;left:16px;border-width:2px 0 0 2px;}
+.corner-tr{top:16px;right:16px;border-width:2px 2px 0 0;}
+.corner-bl{bottom:16px;left:16px;border-width:0 0 2px 2px;}
+.corner-br{bottom:16px;right:16px;border-width:0 2px 2px 0;}
+.scanner-status{font-family:'Orbitron',monospace;font-size:.8rem;color:var(--neon);margin-bottom:20px;min-height:20px;}
+.btn-scan{padding:14px 36px;background:var(--gradient);border:none;border-radius:12px;color:#fff;font-size:.95rem;font-weight:700;cursor:pointer;font-family:'Orbitron',monospace;letter-spacing:.05em;transition:.3s;box-shadow:var(--shadow-neon);}
+.btn-scan:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,245,255,0.5);}
+.scan-result{margin-top:20px;padding:16px;background:rgba(0,245,255,0.05);border:1px solid rgba(0,245,255,0.2);border-radius:12px;font-size:.85rem;color:var(--neon);display:none;text-align:left;}
+.scan-result.show{display:block;animation:fadeInUp .5s ease;}
+.scan-result-item{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(0,245,255,0.1);}
+.scan-result-item:last-child{border:none;}
+
+/* ══════════ SHOP ══════════ */
+#shop{background:var(--dark2);}
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+.product-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:.4s;}
+.product-card:hover{transform:translateY(-6px);border-color:var(--neon);box-shadow:0 20px 40px rgba(0,245,255,0.1);}
+.product-img{height:200px;background:var(--dark3);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.product-img-icon{font-size:60px;opacity:.6;}
+.product-img .badge{position:absolute;top:12px;right:12px;background:var(--gradient);color:#fff;font-size:.7rem;padding:4px 10px;border-radius:20px;font-weight:700;}
+.product-img .badge-sale{background:linear-gradient(135deg,#ff4444,#ff8800);}
+.product-body{padding:24px;}
+.product-body h3{font-size:1rem;font-weight:600;margin-bottom:8px;}
+.product-body p{color:var(--muted);font-size:.85rem;margin-bottom:16px;line-height:1.5;}
+.product-footer{display:flex;align-items:center;justify-content:space-between;}
+.product-price .price{font-size:1.3rem;font-weight:700;color:var(--neon);font-family:'Orbitron',monospace;}
+.product-price .old-price{font-size:.8rem;color:var(--muted);text-decoration:line-through;margin-right:6px;}
+.btn-buy{padding:10px 20px;background:var(--gradient);border:none;border-radius:10px;color:#fff;font-size:.85rem;font-weight:700;cursor:pointer;transition:.3s;}
+.btn-buy:hover{transform:scale(1.05);box-shadow:var(--shadow-neon);}
+
+/* ══════════ MODAL ══════════ */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:5000;display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;width:100%;max-width:500px;position:relative;max-height:90vh;overflow-y:auto;}
+.modal::before{content:'';position:absolute;inset:0;border-radius:20px;padding:1px;background:var(--gradient);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+.modal h3{font-size:1.3rem;margin-bottom:24px;}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer;transition:.3s;}
+.modal-close:hover{color:var(--neon);}
+.order-summary{background:var(--dark2);border-radius:12px;padding:16px;margin-bottom:24px;}
+.order-row{display:flex;justify-content:space-between;padding:6px 0;font-size:.9rem;}
+.order-row.total{border-top:1px solid var(--border);margin-top:8px;padding-top:12px;font-weight:700;color:var(--neon);}
+.promo-row{display:flex;gap:10px;margin-bottom:20px;}
+.promo-row input{flex:1;padding:12px 14px;background:var(--dark2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:.9rem;}
+.promo-row input:focus{outline:none;border-color:var(--neon);}
+.promo-row button{padding:12px 18px;background:var(--gradient);border:none;border-radius:10px;color:#fff;font-weight:700;cursor:pointer;white-space:nowrap;}
+#card-element{background:var(--dark2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:8px;}
+.stripe-powered{text-align:center;font-size:.75rem;color:var(--muted);margin-bottom:16px;}
+#payment-message{min-height:20px;font-size:.85rem;color:#ff4444;margin-bottom:10px;}
+
+/* ══════════ APPOINTMENT ══════════ */
+#appointment{background:var(--dark);}
+.appt-wrapper{max-width:800px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:48px;text-align:center;}
+.appt-options{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;}
+.appt-option{padding:14px 24px;background:var(--dark2);border:1px solid var(--border);border-radius:12px;color:var(--text);cursor:pointer;font-size:.9rem;transition:.3s;display:flex;align-items:center;gap:10px;}
+.appt-option:hover,.appt-option.selected{border-color:var(--neon);color:var(--neon);background:rgba(0,245,255,0.05);}
+.btn-book{padding:16px 44px;background:var(--gradient);border:none;border-radius:12px;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Orbitron',monospace;letter-spacing:.05em;transition:.3s;box-shadow:var(--shadow-neon2);}
+.btn-book:hover{transform:translateY(-3px);box-shadow:0 10px 35px rgba(191,0,255,0.4);}
+
+/* ══════════ ORDER ══════════ */
+#order{background:var(--dark2);}
+.order-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:1000px;margin:0 auto;}
+.order-form-wrapper,.order-benefits{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;}
+.qty-control{display:flex;align-items:center;gap:12px;}
+.qty-btn{width:36px;height:36px;background:var(--dark2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.3s;}
+.qty-btn:hover{border-color:var(--neon);color:var(--neon);}
+.qty-display{font-family:'Orbitron',monospace;font-size:1.1rem;min-width:30px;text-align:center;}
+.benefit-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px;}
+.benefit-icon{width:44px;height:44px;background:rgba(0,245,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--neon);flex-shrink:0;}
+.benefit-icon.purple{background:rgba(191,0,255,0.1);color:var(--neon2);}
+.benefit-icon.green{background:rgba(0,255,136,0.1);color:var(--neon3);}
+.benefit-text h4{font-size:.95rem;margin-bottom:4px;}
+.benefit-text p{font-size:.85rem;color:var(--muted);}
+
+/* ══════════ NEWSLETTER ══════════ */
+#newsletter{background:var(--dark);}
+.newsletter-box{max-width:660px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:24px;padding:56px 48px;text-align:center;}
+.newsletter-input-group{display:flex;gap:12px;margin-bottom:20px;}
+.newsletter-input-group input{flex:1;padding:14px 18px;background:var(--dark2);border:1px solid var(--border);border-radius:12px;color:var(--text);font-size:.95rem;}
+.newsletter-input-group input:focus{outline:none;border-color:var(--neon);}
+.newsletter-input-group button{padding:14px 28px;background:var(--gradient);border:none;border-radius:12px;color:#fff;font-weight:700;cursor:pointer;white-space:nowrap;transition:.3s;}
+.newsletter-input-group button:hover{transform:translateY(-2px);box-shadow:var(--shadow-neon);}
+.gdpr-check{display:flex;align-items:flex-start;gap:10px;text-align:left;font-size:.82rem;color:var(--muted);}
+.gdpr-check input[type=checkbox]{margin-top:2px;accent-color:var(--neon);width:16px;height:16px;cursor:pointer;}
+.subscribe-success{display:none;color:var(--neon3);font-size:.9rem;margin-top:16px;padding:12px;background:rgba(0,255,136,0.08);border-radius:8px;border:1px solid rgba(0,255,136,0.2);}
+.subscribe-success.show{display:block;}
+
+/* ══════════ CONTACT ══════════ */
+#contact{background:var(--dark2);}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:48px;max-width:1100px;margin:0 auto;}
+.contact-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px;}
+.contact-icon{width:48px;height:48px;background:rgba(0,245,255,0.1);border:1px solid rgba(0,245,255,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--neon);font-size:1.1rem;flex-shrink:0;}
+.contact-icon.purple{background:rgba(191,0,255,0.1);border-color:rgba(191,0,255,0.2);color:var(--neon2);}
+.contact-icon.green{background:rgba(0,255,136,0.1);border-color:rgba(0,255,136,0.2);color:var(--neon3);}
+.contact-item h4{font-size:.9rem;font-weight:600;margin-bottom:4px;}
+.contact-item p,.contact-item a{font-size:.9rem;color:var(--muted);text-decoration:none;}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.map-placeholder{margin-top:28px;background:var(--dark2);border:1px solid var(--border);border-radius:12px;height:160px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.9rem;gap:10px;}
+
+/* ══════════ FAQ ══════════ */
+#faq{background:var(--dark);}
+.faq-list{max-width:780px;margin:0 auto;}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:14px;overflow:hidden;transition:.3s;}
+.faq-item:hover{border-color:rgba(0,245,255,0.3);}
+.faq-question{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;cursor:pointer;font-weight:600;font-size:.95rem;}
+.faq-question i{color:var(--neon);transition:.3s;flex-shrink:0;}
+.faq-item.open .faq-question i{transform:rotate(45deg);}
+.faq-answer{padding:0 24px;max-height:0;overflow:hidden;transition:.4s;color:var(--muted);line-height:1.7;font-size:.9rem;}
+.faq-item.open .faq-answer{max-height:200px;padding:0 24px 20px;}
+
+/* ══════════ ACCOUNT ══════════ */
+#account{background:var(--dark2);}
+.account-grid{display:grid;grid-template-columns:280px 1fr;gap:32px;max-width:1000px;margin:0 auto;}
+.account-sidebar{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;}
+.account-avatar{text-align:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+.avatar-circle{width:80px;height:80px;background:var(--gradient);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:32px;color:#fff;margin-bottom:12px;}
+.account-nav{list-style:none;}
+.account-nav a{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;color:var(--muted);text-decoration:none;font-size:.9rem;transition:.3s;margin-bottom:4px;}
+.account-nav a:hover,.account-nav a.active{background:rgba(0,245,255,0.06);color:var(--neon);}
+.account-panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:36px;}
+.account-section{display:none;}
+.account-section.active{display:block;}
+.account-section h3{font-size:1.2rem;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border);}
+.danger-zone{background:rgba(255,50,50,0.05);border:1px solid rgba(255,50,50,0.2);border-radius:14px;padding:28px;margin-top:20px;}
+.danger-zone h4{color:#ff4444;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.danger-zone p{color:var(--muted);font-size:.88rem;margin-bottom:20px;line-height:1.6;}
+.btn-danger{padding:13px 28px;background:transparent;border:1px solid #ff4444;border-radius:10px;color:#ff4444;font-weight:700;cursor:pointer;transition:.3s;font-size:.9rem;}
+.btn-danger:hover{background:#ff4444;color:#fff;}
+.delete-confirm-box{background:var(--dark2);border:1px solid rgba(255,50,50,0.3);border-radius:12px;padding:24px;margin-top:20px;display:none;}
+.delete-confirm-box.show{display:block;animation:fadeInUp .3s ease;}
+.delete-confirm-actions{display:flex;gap:12px;}
+.btn-cancel{padding:11px 22px;background:var(--dark3);border:1px solid var(--border);border-radius:10px;color:var(--text);cursor:pointer;transition:.3s;}
+.delete-steps{list-style:none;margin-bottom:20px;}
+.delete-steps li{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.85rem;color:var(--muted);}
+.delete-steps li i{color:#ff4444;font-size:.8rem;}
+
+/* ══════════ TOAST ══════════ */
+.success-toast{position:fixed;bottom:30px;left:30px;background:var(--card);border:1px solid var(--neon3);border-radius:14px;padding:16px 24px;z-index:9000;display:none;animation:slideIn .4s ease;box-shadow:0 8px 30px rgba(0,255,136,0.2);max-width:360px;}
+.success-toast.show{display:flex;align-items:center;gap:12px;}
+.success-toast i{color:var(--neon3);font-size:1.2rem;flex-shrink:0;}
+@keyframes slideIn{from{transform:translateX(-100px);opacity:0;}to{transform:translateX(0);opacity:1;}}
+
+/* ══════════ SCROLL TOP ══════════ */
+#scrollTop{position:fixed;bottom:30px;right:88px;width:44px;height:44px;background:var(--gradient);border:none;border-radius:50%;color:#fff;font-size:1rem;cursor:pointer;z-index:800;opacity:0;transition:.3s;box-shadow:var(--shadow-neon);}
+#scrollTop.visible{opacity:1;}
+#scrollTop:hover{transform:translateY(-3px);}
+
+/* ══════════ FOOTER ══════════ */
+footer{background:var(--dark);border-top:1px solid var(--border);padding:60px 40px 30px;position:relative;z-index:1;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;margin-bottom:48px;}
+.footer-brand .brand-name{font-size:1.4rem;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px;}
+.footer-brand p{color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:20px;}
+.social-links{display:flex;gap:12px;}
+.social-link{width:38px;height:38px;background:var(--dark2);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;transition:.3s;font-size:.9rem;}
+.social-link:hover{border-color:var(--neon);color:var(--neon);}
+.footer-links h4{font-size:.85rem;font-family:'Orbitron',monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--neon);margin-bottom:16px;}
+.footer-links ul{list-style:none;}
+.footer-links li{margin-bottom:10px;}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:.88rem;transition:.3s;}
+.footer-links a:hover{color:var(--text);}
+.footer-newsletter input{width:100%;padding:11px 14px;background:var(--dark2);border:1px solid var(--border);border-radius:10px 10px 0 0;color:var(--text);font-size:.88rem;border-bottom:none;}
+.footer-newsletter input:focus{outline:none;border-color:var(--neon);}
+.footer-newsletter button{width:100%;padding:11px;background:var(--gradient);border:none;border-radius:0 0 10px 10px;color:#fff;font-size:.88rem;font-weight:700;cursor:pointer;transition:.3s;}
+.footer-bottom{border-top:1px solid var(--border);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-bottom p{color:var(--muted);font-size:.82rem;}
+.legal-links{display:flex;gap:20px;}
+.legal-links a{color:var(--muted);text-decoration:none;font-size:.82rem;transition:.3s;}
+.legal-links a:hover{color:var(--text);}
+
+/* ══════════ RESPONSIVE ══════════ */
+@media(max-width:968px){
+  .scanner-wrapper,.order-grid,.contact-grid,.account-grid,.footer-grid{grid-template-columns:1fr;}
+  .nav-links,.nav-actions{display:none;}
+  .hamburger{display:flex;}
+  .form-row{grid-template-columns:1fr;}
+  .hero-stats{gap:24px;}
+  nav{padding:0 20px;}
+  section{padding:70px 24px;}
+  .auth-box{padding:32px 24px;}
+  .newsletter-input-group{flex-direction:column;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .theme-panel{right:auto;left:0;}
+}
+@media(max-width:600px){
+  .footer-grid{grid-template-columns:1fr;}
+  .hero-buttons{flex-direction:column;align-items:center;}
+  .age-select-grid{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">NEXGEN TECH</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div class="loader-text">INITIALIZING SYSTEMS...</div>
+</div>
+
+<!-- PARTICLES & GRID -->
+<div id="particles"></div>
+<div class="grid-overlay"></div>
+
+<!-- TOAST -->
+<div class="success-toast" id="toast">
+  <i class="fas fa-check-circle" id="toast-icon"></i>
+  <span id="toast-msg">Action completed!</span>
+</div>
+
+<!-- SCROLL TOP -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+
+<!-- ████████████████████████████████████████
+     THEME PICKER (Floating)
+████████████████████████████████████████ -->
+<div id="theme-picker">
+  <button class="theme-toggle-btn" onclick="toggleThemePanel()" title="Change Theme"><i class="fas fa-palette"></i></button>
+  <div class="theme-panel" id="theme-panel">
+    <h4>🎨 Color Theme</h4>
+    <div class="theme-grid">
+      <div class="theme-option active" onclick="setTheme('','Cyber Blue')" id="t-default">
+        <div class="theme-swatch" style="background:linear-gradient(135deg,#00f5ff,#bf00ff);"></div>Cyber Blue
+      </div>
+      <div class="theme-option" onclick="setTheme('theme-emerald','Emerald')" id="t-emerald">
+        <div class="theme-swatch" style="background:linear-gradient(135deg,#00ff88,#00cfaa);"></div>Emerald
+      </div>
+      <div class="theme-option" onclick="setTheme('theme-sunset','Sunset')" id="t-sunset">
+        <div class="theme-swatch" style="background:linear-gradient(135deg,#ff6b35,#ff2d7a);"></div>Sunset
+      </div>
+      <div class="theme-option" onclick="setTheme('theme-galaxy','Galaxy')" id="t-galaxy">
+        <div class="theme-swatch" style="background:linear-gradient(135deg,#c084fc,#f472b6);"></div>Galaxy
+      </div>
+      <div class="theme-option" onclick="setTheme('theme-gold','Gold')" id="t-gold">
+        <div class="theme-swatch" style="background:linear-gradient(135deg,#ffd700,#ff8c00);"></div>Gold
+      </div>
+      <div class="theme-option" onclick="setTheme('theme-ice','Ice')" id="t-ice">
+        <div class="theme-swatch" style="background:linear-gradient(135deg,#7dd3fc,#e0f7ff);"></div>Ice
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ████████████████████████████████████████
+     AGE VERIFICATION GATE
+████████████████████████████████████████ -->
+<div id="age-gate">
+  <div id="particles-age"></div>
+  <div class="age-box">
+    <span class="age-icon">🔞</span>
+    <h2>Age Verification</h2>
+    <p>NexGen Tech provides advanced biometric and cybersecurity technology. Please confirm your age to access our platform. You must be 13 or older to use our services.</p>
+    <p style="font-size:.8rem;color:var(--muted);margin-bottom:20px;margin-top:-16px;">Select your age group below:</p>
+    <div class="age-select-grid" id="age-grid">
+      <button class="age-btn" onclick="selectAge(this,'under13','deny')">Under 13</button>
+      <button class="age-btn" onclick="selectAge(this,'13-17','minor')">13 – 17</button>
+      <button class="age-btn" onclick="selectAge(this,'18-24','adult')">18 – 24</button>
+      <button class="age-btn" onclick="selectAge(this,'25-34','adult')">25 – 34</button>
+      <button class="age-btn" onclick="selectAge(this,'35-44','adult')">35 – 44</button>
+      <button class="age-btn" onclick="selectAge(this,'45-54','adult')">45 – 54</button>
+      <button class="age-btn" onclick="selectAge(this,'55-64','adult')">55 – 64</button>
+      <button class="age-btn" onclick="selectAge(this,'65+','adult')">65+</button>
+      <button class="age-btn" onclick="selectAge(this,'prefer-not','adult')" style="grid-column:span 2;">Prefer Not to Say</button>
+    </div>
+    <button class="age-proceed" id="age-proceed-btn" disabled onclick="proceedFromAge()">
+      <i class="fas fa-shield-halved"></i> &nbsp;CONFIRM & ENTER
+    </button>
+    <div class="age-warning" id="age-warning">
+      <i class="fas fa-triangle-exclamation"></i> &nbsp;We're sorry — NexGen Tech is not available to users under 13. Please leave this site.
+    </div>
+    <p style="font-size:.78rem;color:var(--muted);margin-top:12px;">By entering you agree to our <a href="#" style="color:var(--neon);">Terms</a> & <a href="#" style="color:var(--neon);">Privacy Policy</a>. We do not store your age data.</p>
+  </div>
+</div>
+
+<!-- ████████████████████████████████████████
+     AUTH OVERLAY
+████████████████████████████████████████ -->
+<div id="auth-overlay">
+  <div class="auth-box">
+    <div class="auth-logo">
+      <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+      <h2>NEXGEN TECH</h2>
+      <p style="font-size:.82rem;color:var(--muted);margin-top:4px;">Futuristic Solutions Platform</p>
+    </div>
+    <div class="auth-tabs">
+      <div class="auth-tab active" onclick="switchAuth('login')">Sign In</div>
+      <div class="auth-tab" onclick="switchAuth('register')">Register</div>
+    </div>
+    <div class="auth-form active" id="auth-login">
+      <div class="social-login">
+        <button class="social-btn" onclick="socialLogin('Google')"><i class="fab fa-google"></i> Google</button>
+        <button class="social-btn" onclick="socialLogin('GitHub')"><i class="fab fa-github"></i> GitHub</button>
+      </div>
+      <div class="auth-divider">— or sign in with email —</div>
+      <div class="form-group"><label>Email Address</label><input type="email" id="login-email" placeholder="your@email.com"/></div>
+      <div class="form-group"><label>Password</label><input type="password" id="login-pass" placeholder="••••••••"/></div>
+      <div style="text-align:right;margin-bottom:18px;"><a href="#" style="font-size:.82rem;color:var(--neon);text-decoration:none;" onclick="showForgot()">Forgot password?</a></div>
+      <button class="btn-primary" onclick="doLogin()">SIGN IN</button>
+      <div class="auth-footer">No account? <a href="#" onclick="switchAuth('register')">Register →</a></div>
+    </div>
+    <div class="auth-form" id="auth-register">
+      <div class="form-group"><label>Full Name</label><input type="text" id="reg-name" placeholder="John Doe"/></div>
+      <div class="form-group"><label>Email Address</label><input type="email" id="reg-email" placeholder="your@email.com"/></div>
+      <div class="form-group"><label>Password</label><input type="password" id="reg-pass" placeholder="Min. 8 characters"/></div>
+      <div class="form-group"><label>Confirm Password</label><input type="password" id="reg-pass2" placeholder="Repeat password"/></div>
+      <div class="gdpr-check" style="margin-bottom:20px;"><input type="checkbox" id="reg-terms"/><label for="reg-terms">I agree to the <a href="#" style="color:var(--neon);">Terms</a> & <a href="#" style="color:var(--neon);">Privacy Policy</a>.</label></div>
+      <button class="btn-primary" onclick="doRegister()">CREATE ACCOUNT</button>
+      <div class="auth-footer">Have an account? <a href="#" onclick="switchAuth('login')">Sign in →</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ████████████████████████████████████████
+     MAIN SITE
+████████████████████████████████████████ -->
+<div id="main-site">
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#home">
+    <div class="nav-logo-icon" id="nav-logo-container"><i class="fas fa-bolt" id="default-logo-icon"></i></div>
+    <span class="nav-logo-text">NEXGEN TECH</span>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#video-guide">Video Guide</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#scanner">Scanner</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#bg-settings">Themes</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-actions">
+    <label for="logo-upload" title="Upload Logo" style="cursor:pointer;">
+      <input type="file" id="logo-upload" accept="image/*" style="display:none;" onchange="uploadLogo(this)"/>
+      <span class="btn-nav btn-outline" style="font-size:.75rem;"><i class="fas fa-upload"></i> Logo</span>
+    </label>
+    <button class="btn-nav btn-solid" onclick="showAccountPanel()"><i class="fas fa-user"></i> Account</button>
+    <button class="btn-nav btn-outline" onclick="doLogout()">Logout</button>
+  </div>
+  <div class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#home" onclick="closeMobile()">🏠 Home</a>
+  <a href="#video-guide" onclick="closeMobile()">🎬 Video Guide</a>
+  <a href="#services" onclick="closeMobile()">⚡ Services</a>
+  <a href="#scanner" onclick="closeMobile()">👁 Scanner</a>
+  <a href="#shop" onclick="closeMobile()">🛒 Shop</a>
+  <a href="#bg-settings" onclick="closeMobile()">🎨 Themes</a>
+  <a href="#newsletter" onclick="closeMobile()">📧 Newsletter</a>
+  <a href="#contact" onclick="closeMobile()">📞 Contact</a>
+  <a href="#faq" onclick="closeMobile()">❓ FAQ</a>
+  <a href="#" onclick="doLogout()">🚪 Logout</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="home">
+  <div class="hero-orb hero-orb1"></div>
+  <div class="hero-orb hero-orb2"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span> Next-Generation Technology Solutions</div>
+    <h1 class="hero-title">The Future of<br/><span>High-Tech Services</span><br/>Starts Here</h1>
+    <p class="hero-sub">Delivering cutting-edge laser scanning, AI-powered analysis, and premium tech services with unmatched precision and futuristic design.</p>
+    <div class="hero-buttons">
+      <button class="btn-hero-primary" onclick="scrollTo('scanner')"><i class="fas fa-eye"></i> &nbsp;Launch Eye Scanner</button>
+      <button class="btn-hero-secondary" onclick="scrollTo('video-guide')"><i class="fas fa-play-circle"></i> &nbsp;Watch Guide</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="number" data-count="12500">0</div><div class="label">Happy Clients</div></div>
+      <div class="hero-stat"><div class="number" data-count="99">0</div><div class="label">% Uptime</div></div>
+      <div class="hero-stat"><div class="number" data-count="340">0</div><div class="label">Projects Done</div></div>
+      <div class="hero-stat"><div class="number" data-count="24">0</div><div class="label">Hour Support</div></div>
+    </div>
+  </div>
+</section>
+<div class="section-divider"></div>
+
+<!-- ═══ VIDEO GUIDE ═══ -->
+<section id="video-guide">
+  <div class="section-header">
+    <div class="section-tag">🎬 Platform Tour</div>
+    <h2 class="section-title">1-Minute <span>Video Guide</span></h2>
+    <p class="section-sub">A complete walkthrough of everything NexGen Tech offers — from scanning to checkout — in under 60 seconds.</p>
+  </div>
+  <div class="video-container">
+    <div class="video-player" id="video-player">
+      <canvas id="guide-canvas"></canvas>
+    </div>
+    <div class="video-controls">
+      <button class="vc-play" id="vc-play-btn" onclick="togglePlay()"><i class="fas fa-play" id="play-icon"></i></button>
+      <div class="vc-progress" id="vc-progress" onclick="seekVideo(event)">
+        <div class="vc-bar" id="vc-bar"></div>
+      </div>
+      <span class="vc-time" id="vc-time">0:00 / 1:00</span>
+      <button class="vc-vol" onclick="toggleMute()" id="vc-vol-btn"><i class="fas fa-volume-up" id="vol-icon"></i></button>
+      <button class="vc-fs" onclick="toggleFS()"><i class="fas fa-expand"></i></button>
+    </div>
+    <div class="video-chapters">
+      <div class="chapter-btn active-ch" onclick="jumpTo(0)" id="ch0"><span class="ch-time">0:00</span>Welcome & Intro</div>
+      <div class="chapter-btn" onclick="jumpTo(10)" id="ch1"><span class="ch-time">0:10</span>Our Services</div>
+      <div class="chapter-btn" onclick="jumpTo(20)" id="ch2"><span class="ch-time">0:20</span>Eye Scanner</div>
+      <div class="chapter-btn" onclick="jumpTo(30)" id="ch3"><span class="ch-time">0:30</span>Shop & Checkout</div>
+      <div class="chapter-btn" onclick="jumpTo(40)" id="ch4"><span class="ch-time">0:40</span>Book Appointment</div>
+      <div class="chapter-btn" onclick="jumpTo(50)" id="ch5"><span class="ch-time">0:50</span>Contact & FAQ</div>
+    </div>
+  </div>
+</section>
+<div class="section-divider"></div>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services">
+  <div class="section-header">
+    <div class="section-tag">⚡ What We Offer</div>
+    <h2 class="section-title">Our <span>Premium Services</span></h2>
+    <p class="section-sub">From laser-precision scanning to AI-powered consulting, we deliver solutions that define tomorrow.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon"><i class="fas fa-eye"></i></div><h3>Laser Eye Scanning</h3><p>Advanced biometric laser scanning for identity verification, medical diagnostics, and security access control.</p><span class="service-tag">🔬 Advanced Tech</span></div>
+    <div class="service-card"><div class="service-icon" style="color:var(--neon2);background:rgba(191,0,255,0.1);border-color:rgba(191,0,255,0.2);"><i class="fas fa-brain"></i></div><h3>AI Consulting</h3><p>Custom AI models, ML pipelines, and data intelligence solutions tailored for your business.</p><span class="service-tag" style="color:var(--neon2);border-color:rgba(191,0,255,0.3);background:rgba(191,0,255,0.08);">🤖 AI Powered</span></div>
+    <div class="service-card"><div class="service-icon" style="color:var(--neon3);background:rgba(0,255,136,0.1);border-color:rgba(0,255,136,0.2);"><i class="fas fa-shield-halved"></i></div><h3>Cybersecurity Suite</h3><p>Enterprise-grade protection: penetration testing, threat monitoring, and zero-trust architecture.</p><span class="service-tag" style="color:var(--neon3);border-color:rgba(0,255,136,0.3);background:rgba(0,255,136,0.08);">🔐 Secure</span></div>
+    <div class="service-card"><div class="service-icon" style="color:#ff8c00;background:rgba(255,140,0,0.1);border-color:rgba(255,140,0,0.2);"><i class="fas fa-satellite-dish"></i></div><h3>IoT Integration</h3><p>Smart device orchestration, edge computing, and seamless IoT ecosystem integration.</p><span class="service-tag" style="color:#ff8c00;border-color:rgba(255,140,0,0.3);background:rgba(255,140,0,0.08);">📡 Connected</span></div>
+    <div class="service-card"><div class="service-icon" style="color:#ff4488;background:rgba(255,68,136,0.1);border-color:rgba(255,68,136,0.2);"><i class="fas fa-cloud"></i></div><h3>Cloud Architecture</h3><p>Scalable multi-cloud solutions, serverless design, and automated DevOps pipelines.</p><span class="service-tag" style="color:#ff4488;border-color:rgba(255,68,136,0.3);background:rgba(255,68,136,0.08);">☁️ Cloud Native</span></div>
+    <div class="service-card"><div class="service-icon" style="color:#00cfff;background:rgba(0,207,255,0.1);border-color:rgba(0,207,255,0.2);"><i class="fas fa-chart-line"></i></div><h3>Data Analytics</h3><p>Real-time BI dashboards, predictive analytics, and custom reporting for data-driven decisions.</p><span class="service-tag" style="color:#00cfff;border-color:rgba(0,207,255,0.3);background:rgba(0,207,255,0.08);">📊 Insights</span></div>
+  </div>
+</section>
+<div class="section-divider"></div>
+
+<!-- ═══ SCANNER ═══ -->
+<section id="scanner">
+  <div class="section-header">
+    <div class="section-tag">👁 Biometric Tech</div>
+    <h2 class="section-title">Laser <span>Eye Scanner</span></h2>
+    <p class="section-sub">Experience our proprietary multi-spectrum laser scanning system for unparalleled biometric identification.</p>
+  </div>
+  <div class="scanner-wrapper">
+    <div class="scanner-info">
+      <h3>Precision at the <span style="color:var(--neon);">Speed of Light</span></h3>
+      <p>Our patented laser eye scanning technology captures over 1,200 unique biometric data points in under 0.3 seconds, achieving 99.97% identification accuracy.</p>
+      <ul class="scanner-features">
+        <li><i class="fas fa-circle"></i> Multi-spectrum infrared & UV laser array</li>
+        <li><i class="fas fa-circle"></i> Real-time liveness detection & anti-spoofing</li>
+        <li><i class="fas fa-circle"></i> HIPAA & GDPR compliant data processing</li>
+        <li><i class="fas fa-circle"></i> 0.3 second full biometric capture</li>
+        <li><i class="fas fa-circle"></i> 1,200+ unique data points per scan</li>
+        <li><i class="fas fa-circle"></i> Military-grade AES-256 encryption</li>
+      </ul>
+      <button class="btn-scan" onclick="startScan()"><i class="fas fa-play"></i> &nbsp;Start Scan</button>
+    </div>
+    <div class="scanner-ui" id="scanner-ui">
+      <div class="corner-tl"></div><div class="corner-tr"></div><div class="corner-bl"></div><div class="corner-br"></div>
+      <div class="scan-line" id="scan-line"></div>
+      <div class="eye-container">
+        <div class="eye-outer"></div><div class="eye-outer2"></div>
+        <div class="eye-circle"><div class="eye-pupil"></div></div>
+      </div>
+      <div class="scanner-status" id="scanner-status">SYSTEM READY</div>
+      <button class="btn-scan" onclick="startScan()" id="scan-btn"><i class="fas fa-eye"></i> &nbsp;INITIATE SCAN</button>
+      <div class="scan-result" id="scan-result">
+        <div style="font-family:'Orbitron',monospace;font-size:.75rem;color:var(--neon3);margin-bottom:8px;">✓ SCAN COMPLETE — IDENTITY VERIFIED</div>
+        <div class="scan-result-item"><span>Iris Pattern Match</span><span style="color:var(--neon3);">99.97%</span></div>
+        <div class="scan-result-item"><span>Liveness Score</span><span style="color:var(--neon3);">PASS</span></div>
+        <div class="scan-result-item"><span>Data Points Captured</span><span style="color:var(--neon);">1,247</span></div>
+        <div class="scan-result-item"><span>Scan Duration</span><span style="color:var(--neon);">0.28s</span></div>
+        <div class="scan-result-item"><span>Encryption</span><span style="color:var(--neon);">AES-256</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section-divider"></div>
+
+<!-- ═══ SHOP ═══ -->
+<section id="shop">
+  <div class="section-header">
+    <div class="section-tag">🛒 Store</div>
+    <h2 class="section-title">Our <span>Products</span></h2>
+    <p class="section-sub">Premium tech products and service packages designed for peak performance.</p>
+  </div>
+  <div class="shop-grid">
+    <div class="product-card"><div class="product-img" style="background:linear-gradient(135deg,#0a1628,#1a2a4a);"><span class="product-img-icon">👁</span><span class="badge">POPULAR</span></div><div class="product-body"><h3>EyeScan Pro Unit</h3><p>Compact desktop laser eye scanner with AI-powered analysis module.</p><div class="product-footer"><div class="product-price"><span class="old-price">$1,299</span><span class="price">$899</span></div><button class="btn-buy" onclick="openCheckout('EyeScan Pro Unit',899)">Buy Now</button></div></div></div>
+    <div class="product-card"><div class="product-img" style="background:linear-gradient(135deg,#1a0a28,#2a1a4a);"><span class="product-img-icon">🔐</span><span class="badge badge-sale">SALE</span></div><div class="product-body"><h3>CyberShield Suite</h3><p>Annual subscription to our enterprise cybersecurity platform with 24/7 SOC.</p><div class="product-footer"><div class="product-price"><span class="old-price">$2,400/yr</span><span class="price">$1,599/yr</span></div><button class="btn-buy" onclick="openCheckout('CyberShield Suite',1599)">Buy Now</button></div></div></div>
+    <div class="product-card"><div class="product-img" style="background:linear-gradient(135deg,#0a2810,#1a4a2a);"><span class="product-img-icon">🤖</span></div><div class="product-body"><h3>AI Consulting Package</h3><p>8-week custom AI development engagement with full source code delivery.</p><div class="product-footer"><div class="product-price"><span class="price">$4,999</span></div><button class="btn-buy" onclick="openCheckout('AI Consulting Package',4999)">Buy Now</button></div></div></div>
+    <div class="product-card"><div class="product-img" style="background:linear-gradient(135deg,#28100a,#4a2a1a);"><span class="product-img-icon">📡</span></div><div class="product-body"><h3>IoT Starter Kit</h3><p>12 smart sensors, gateway hub, and cloud management portal.</p><div class="product-footer"><div class="product-price"><span class="old-price">$599</span><span class="price">$399</span></div><button class="btn-buy" onclick="openCheckout('IoT Starter Kit',399)">Buy Now</button></div></div></div>
+    <div class="product-card"><div class="product-img" style="background:linear-gradient(135deg,#0a2028,#1a3a4a);"><span class="product-img-icon">☁️</span><span class="badge">NEW</span></div><div class="product-body"><h3>Cloud Migration Pro</h3><p>Zero-downtime migration with 90-day support SLA.</p><div class="product-footer"><div class="product-price"><span class="price">$3,499</span></div><button class="btn-buy" onclick="openCheckout('Cloud Migration Pro',3499)">Buy Now</button></div></div></div>
+    <div class="product-card"><div class="product-img" style="background:linear-gradient(135deg,#1a1a0a,#2a2a1a);"><span class="product-img-icon">📊</span><span class="badge badge-sale">BEST VALUE</span></div><div class="product-body"><h3>Data Analytics Platform</h3><p>Real-time BI dashboards, ML predictions, and custom KPI reporting.</p><div class="product-footer"><div class="product-price"><span class="old-price">$899/mo</span><span class="price">$499/mo</span></div><button class="btn-buy" onclick="openCheckout('Data Analytics Platform',499)">Buy Now</button></div></div></div>
+  </div>
+</section>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal-overlay" id="checkout-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeCheckout()"><i class="fas fa-times"></i></button>
+    <h3>🛒 Secure Checkout</h3>
+    <div class="order-summary">
+      <div class="order-row"><span id="checkout-item-name">Product</span><span id="checkout-item-price">$0</span></div>
+      <div class="order-row" id="promo-row-display" style="display:none;"><span>Promo Discount</span><span id="promo-discount-val" style="color:var(--neon3);">-$0</span></div>
+      <div class="order-row total"><span>Total Due</span><span id="checkout-total">$0</span></div>
+    </div>
+    <div class="promo-row">
+      <input type="text" id="promo-input" placeholder="Promo code (e.g. NEXGEN20)"/>
+      <button onclick="applyPromo()">Apply</button>
+    </div>
+    <div id="promo-msg" style="font-size:.8rem;margin-bottom:14px;min-height:18px;"></div>
+    <div class="form-group"><label>Cardholder Name</label><input type="text" id="card-name" placeholder="John Doe"/></div>
+    <div class="form-group"><label>Card Details</label><div id="card-element"></div></div>
+    <div class="stripe-powered"><i class="fab fa-stripe"></i> Powered by Stripe — 256-bit SSL encrypted</div>
+    <div id="payment-message"></div>
+    <button class="btn-primary" onclick="submitPayment()" id="pay-btn"><i class="fas fa-lock"></i> &nbsp;PAY SECURELY</button>
+  </div>
+</div>
+<div class="section-divider"></div>
+
+<!-- ═══ BACKGROUND / THEME SETTINGS SECTION ═══ -->
+<section id="bg-settings">
+  <div class="section-header">
+    <div class="section-tag">🎨 Personalize</div>
+    <h2 class="section-title">Background <span>Color Themes</span></h2>
+    <p class="section-sub">Choose your preferred color theme to personalize your NexGen Tech experience. Your selection is saved automatically.</p>
+  </div>
+  <div class="bg-options-grid">
+    <div class="bg-option active" id="bg-opt-default" onclick="setThemeFull('','bg-opt-default','Cyber Blue')">
+      <div class="bg-preview" style="background:linear-gradient(135deg,#050a14,#0a1628);border-bottom:3px solid #00f5ff;">
+        <span style="color:#00f5ff;font-family:'Orbitron',monospace;font-size:.7rem;">CYBER BLUE</span>
+      </div>
+      <p>Cyber Blue</p>
+    </div>
+    <div class="bg-option" id="bg-opt-emerald" onclick="setThemeFull('theme-emerald','bg-opt-emerald','Emerald')">
+      <div class="bg-preview" style="background:linear-gradient(135deg,#03100a,#061a0f);border-bottom:3px solid #00ff88;">
+        <span style="color:#00ff88;font-family:'Orbitron',monospace;font-size:.7rem;">EMERALD</span>
+      </div>
+      <p>Emerald</p>
+    </div>
+    <div class="bg-option" id="bg-opt-sunset" onclick="setThemeFull('theme-sunset','bg-opt-sunset','Sunset')">
+      <div class="bg-preview" style="background:linear-gradient(135deg,#140805,#200d08);border-bottom:3px solid #ff6b35;">
+        <span style="color:#ff6b35;font-family:'Orbitron',monospace;font-size:.7rem;">SUNSET</span>
+      </div>
+      <p>Sunset</p>
+    </div>
+    <div class="bg-option" id="bg-opt-galaxy" onclick="setThemeFull('theme-galaxy','bg-opt-galaxy','Galaxy')">
+      <div class="bg-preview" style="background:linear-gradient(135deg,#080510,#100a1e);border-bottom:3px solid #c084fc;">
+        <span style="color:#c084fc;font-family:'Orbitron',monospace;font-size:.7rem;">GALAXY</span>
+      </div>
+      <p>Galaxy</p>
+    </div>
+    <div class="bg-option" id="bg-opt-gold" onclick="setThemeFull('theme-gold','bg-opt-gold','Gold')">
+      <div class="bg-preview" style="background:linear-gradient(135deg,#100c00,#1a1400);border-bottom:3px solid #ffd700;">
+        <span style="color:#ffd700;font-family:'Orbitron',monospace;font-size:.7rem;">GOLD</span>
+      </div>
+      <p>Gold</p>
+    </div>
+    <div class="bg-option" id="bg-opt-ice" onclick="setThemeFull('theme-ice','bg-opt-ice','Ice')">
+      <div class="bg-preview" style="background:linear-gradient(135deg,#02080f,#050f1a);border-bottom:3px solid #7dd3fc;">
+        <span style="color:#7dd3fc;font-family:'Orbitron',monospace;font-size:.7rem;">ICE</span>
+      </div>
+      <p>Ice</p>
+    </div>
+  </div>
+  <p style="text-align:center;color:var(--muted);font-size:.85rem;margin-top:28px;">
+    <i class="fas fa-palette" style="color:var(--neon);"></i> &nbsp;Theme also accessible via the floating palette button (bottom right)
+  </p>
+</section>
+<div class="section-divider"></div>
+
+<!-- ═══ APPOINTMENT ═══ -->
+<section id="appointment" style="background:var(--dark);">
+  <div class="section-header">
+    <div class="section-tag">📅 Schedule</div>
+    <h2 class="section-title">Book an <span>Appointment</span></h2>
+    <p class="section-sub">Schedule a consultation or demo with our expert team at a time that works for you.</p>
+  </div>
+  <div class="appt-wrapper">
+    <div style="font-size:48px;margin-bottom:24px;display:inline-block;">📅</div>
+    <h3>Reserve Your Session</h3>
+    <p style="color:var(--muted);margin-bottom:32px;line-height:1.7;">Choose your preferred consultation type. All appointments include a free 15-min discovery call.</p>
+    <div class="appt-options">
+      <div class="appt-option" onclick="selectAppt(this)"><i class="fas fa-video"></i> Video Call</div>
+      <div class="appt-option" onclick="selectAppt(this)"><i class="fas fa-phone"></i> Phone Call</div>
+      <div class="appt-option" onclick="selectAppt(this)"><i class="fas fa-building"></i> In-Person</div>
+      <div class="appt-option" onclick="selectAppt(this)"><i class="fas fa-desktop"></i> Product Demo</div>
+    </div>
+    <div class="form-group" style="max-width:420px;margin:0 auto 24px;">
+      <label>Preferred Date & Time</label>
+      <input type="datetime-local" id="appt-datetime" style="width:100%;padding:13px 16px;background:var(--dark2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:.95rem;"/>
+    </div>
+    <button class="btn-book" onclick="bookAppointment()"><i class="fas fa-calendar-check"></i> &nbsp;BOOK APPOINTMENT</button>
+    <p style="margin-top:16px;font-size:.8rem;color:var(--muted);">Or: <a href="https://calendly.com" target="_blank" style="color:var(--neon);">calendly.com/nexgentech</a></p>
+  </div>
+</section>
+<div class="section-divider"></div>
+
+<!-- ═══ ORDER FORM ═══ -->
+<section id="order">
+  <div class="section-header">
+    <div class="section-tag">📋 Orders</div>
+    <h2 class="section-title">Place Your <span>Order</span></h2>
+    <p class="section-sub">Fill in your details and our team will process your request within 24 hours.</p>
+  </div>
+  <div class="order-grid">
+    <div class="order-form-wrapper">
+      <h3>Order Details</h3>
+      <div class="form-group"><label>Your Name</label><input type="text" id="ord-name" placeholder="Full name"/></div>
+      <div class="form-group"><label>Email</label><input type="email" id="ord-email" placeholder="your@email.com"/></div>
+      <div class="form-group"><label>Service / Product</label>
+        <select id="ord-service" style="width:100%;padding:13px 16px;background:var(--dark2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:.95rem;">
+          <option value="">Select a service...</option>
+          <option>EyeScan Pro Unit</option><option>CyberShield Suite</option><option>AI Consulting Package</option><option>IoT Starter Kit</option><option>Cloud Migration Pro</option><option>Data Analytics Platform</option><option>Custom Request</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Quantity</label><div class="qty-control"><button class="qty-btn" onclick="changeQty(-1)">−</button><span class="qty-display" id="qty-display">1</span><button class="qty-btn" onclick="changeQty(1)">+</button></div></div>
+      <div class="form-group"><label>Special Notes</label><textarea id="ord-notes" rows="3" placeholder="Any specific requirements..." style="resize:vertical;"></textarea></div>
+      <button class="btn-primary" onclick="submitOrder()">SUBMIT ORDER</button>
+    </div>
+    <div class="order-benefits">
+      <h3>Why Choose NexGen?</h3>
+      <div class="benefit-item"><div class="benefit-icon"><i class="fas fa-bolt"></i></div><div class="benefit-text"><h4>Lightning Fast Delivery</h4><p>Orders processed within 24-48 hours of confirmation.</p></div></div>
+      <div class="benefit-item"><div class="benefit-icon purple"><i class="fas fa-shield-halved"></i></div><div class="benefit-text"><h4>30-Day Guarantee</h4><p>Money-back guarantee on all hardware and service packages.</p></div></div>
+      <div class="benefit-item"><div class="benefit-icon green"><i class="fas fa-headset"></i></div><div class="benefit-text"><h4>24/7 Support</h4><p>Dedicated support team available around the clock.</p></div></div>
+      <div class="benefit-item"><div class="benefit-icon" style="background:rgba(255,140,0,0.1);color:#ff8c00;"><i class="fas fa-lock"></i></div><div class="benefit-text"><h4>Secure Payments</h4><p>PCI-DSS Level 1 certified Stripe infrastructure.</p></div></div>
+    </div>
+  </div>
+</section>
+<div class="section-divider"></div>
+
+<!-- ═══ NEWSLETTER ═══ -->
+<section id="newsletter" style="background:var(--dark);">
+  <div class="newsletter-box">
+    <div style="font-size:2.5rem;margin-bottom:16px;">📧</div>
+    <h3>Stay <span style="background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Ahead</span> of Tech</h3>
+    <p style="color:var(--muted);margin-bottom:32px;line-height:1.7;">Join 12,500+ subscribers who get weekly insights on AI breakthroughs, cybersecurity tips, and exclusive member-only deals.</p>
+    <div class="newsletter-input-group">
+      <input type="email" id="nl-email" placeholder="Enter your email address..."/>
+      <button onclick="subscribeNewsletter()"><i class="fas fa-paper-plane"></i> Subscribe</button>
+    </div>
+    <div class="gdpr-check">
+      <input type="checkbox" id="nl-gdpr"/>
+      <label for="nl-gdpr">I consent to NexGen Tech processing my email per our <a href="#" style="color:var(--neon);">Privacy Policy</a>. Unsubscribe anytime.</label>
+    </div>
+    <div class="subscribe-success" id="sub-success"><i class="fas fa-check-circle"></i> &nbsp;🎉 Subscribed! Welcome email sent. A promotional sequence has begun.</div>
+  </div>
+</section>
+<div class="section-divider"></div>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="section-header">
+    <div class="section-tag">📞 Get In Touch</div>
+    <h2 class="section-title">Contact <span>Us</span></h2>
+    <p class="section-sub">Our team is ready to assist you 24/7. Reach out by any channel below.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3 style="margin-bottom:20px;">Let's Build Something <span style="color:var(--neon);">Extraordinary</span></h3>
+      <p style="color:var(--muted);line-height:1.7;margin-bottom:32px;">Whether you have a question, project idea, or need a quote — we're just a message away. We respond within 2 business hours.</p>
+      <div class="contact-item"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div><h4>Email Us</h4><p><a href="mailto:moghalukaito@gmail.com">moghalukaito@gmail.com</a></p></div></div>
+      <div class="contact-item"><div class="contact-icon purple"><i class="fas fa-phone"></i></div><div><h4>Call Us</h4><p><a href="tel:3466047133">346 604 7133</a></p></div></div>
+      <div class="contact-item"><div class="contact-icon green"><i class="fas fa-clock"></i></div><div><h4>Business Hours</h4><p>Mon–Fri: 9AM–8PM EST<br/>Sat–Sun: 10AM–5PM EST</p></div></div>
+      <div class="contact-item"><div class="contact-icon" style="background:rgba(255,140,0,0.1);border-color:rgba(255,140,0,0.2);color:#ff8c00;"><i class="fas fa-map-marker-alt"></i></div><div><h4>Headquarters</h4><p>NexGen Tower, Innovation District<br/>Houston, TX 77001, USA</p></div></div>
+      <div class="map-placeholder"><i class="fas fa-map-marker-alt" style="color:var(--neon);"></i><span>Houston, TX — Interactive Map on Request</span></div>
+    </div>
+    <div class="contact-form">
+      <h3 style="margin-bottom:28px;">Send Us a Message</h3>
+      <div class="form-row"><div class="form-group"><label>First Name</label><input type="text" id="c-first" placeholder="John"/></div><div class="form-group"><label>Last Name</label><input type="text" id="c-last" placeholder="Doe"/></div></div>
+      <div class="form-group"><label>Email Address</label><input type="email" id="c-email" placeholder="john@company.com"/></div>
+      <div class="form-group"><label>Phone (Optional)</label><input type="tel" id="c-phone" placeholder="346 604 7133"/></div>
+      <div class="form-group"><label>Subject</label>
+        <select id="c-subject" style="width:100%;padding:13px 16px;background:var(--dark2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:.95rem;">
+          <option>General Inquiry</option><option>Product / Service Question</option><option>Partnership Opportunity</option><option>Technical Support</option><option>Billing & Payments</option><option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message</label><textarea id="c-message" rows="5" placeholder="Tell us how we can help..." style="resize:vertical;"></textarea></div>
+      <button class="btn-primary" onclick="submitContact()"><i class="fas fa-paper-plane"></i> &nbsp;SEND MESSAGE</button>
+    </div>
+  </div>
+</section>
+<div class="section-divider"></div>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq" style="background:var(--dark2);">
+  <div class="section-header">
+    <div class="section-tag">❓ Questions</div>
+    <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+    <p class="section-sub">Everything you need to know about our products, services, and policies.</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How accurate is the Laser Eye Scanner? <i class="fas fa-plus"></i></div><div class="faq-answer">Our EyeScan Pro achieves 99.97% biometric identification accuracy using a multi-spectrum infrared and UV laser array. It captures over 1,200 unique data points per scan in under 0.3 seconds.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Is my biometric data stored securely? <i class="fas fa-plus"></i></div><div class="faq-answer">All biometric data is encrypted with AES-256 before transmission and stored in our HIPAA and GDPR-compliant data centers. We never sell personal data to third parties.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">What payment methods do you accept? <i class="fas fa-plus"></i></div><div class="faq-answer">We accept all major credit/debit cards via Stripe, PayPal, wire transfers for enterprise orders, and cryptocurrency payments (BTC, ETH) upon request.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Do you offer a money-back guarantee? <i class="fas fa-plus"></i></div><div class="faq-answer">Yes! All hardware products come with a 30-day full money-back guarantee. Software subscriptions include a 14-day free trial.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How do promo codes work? <i class="fas fa-plus"></i></div><div class="faq-answer">Enter your promo code at checkout. Try NEXGEN20 (20% off), WELCOME50 ($50 off first order), or TECH15 (15% off). Codes are case-insensitive and may have expiry dates.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How do I delete my account? <i class="fas fa-plus"></i></div><div class="faq-answer">Navigate to Account → Security & Privacy → Delete Account. The process is fully self-service with identity verification. All data is permanently removed within 30 days per GDPR Article 17.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How do I contact support? <i class="fas fa-plus"></i></div><div class="faq-answer">Reach us at moghalukaito@gmail.com or call 346 604 7133. Our support team is available Mon–Fri 9AM–8PM EST, weekends 10AM–5PM EST.</div></div>
+  </div>
+</section>
+<div class="section-divider"></div>
+
+<!-- ═══ ACCOUNT ═══ -->
+<section id="account" style="display:none;">
+  <div class="section-header">
+    <div class="section-tag">👤 My Account</div>
+    <h2 class="section-title">Account <span>Settings</span></h2>
+  </div>
+  <div class="account-grid">
+    <div class="account-sidebar">
+      <div class="account-avatar">
+        <div class="avatar-circle" id="acc-avatar-icon"><i class="fas fa-user"></i></div>
+        <h4 id="acc-display-name">User</h4>
+        <p id="acc-display-email" style="font-size:.78rem;color:var(--muted);">user@email.com</p>
+      </div>
+      <ul class="account-nav">
+        <li><a href="#" class="active" onclick="showAccTab('profile',this)"><i class="fas fa-user"></i> Profile</a></li>
+        <li><a href="#" onclick="showAccTab('orders',this)"><i class="fas fa-box"></i> My Orders</a></li>
+        <li><a href="#" onclick="showAccTab('billing',this)"><i class="fas fa-credit-card"></i> Billing</a></li>
+        <li><a href="#" onclick="showAccTab('notifications',this)"><i class="fas fa-bell"></i> Notifications</a></li>
+        <li><a href="#" onclick="showAccTab('security',this)"><i class="fas fa-shield-halved"></i> Security & Privacy</a></li>
+      </ul>
+    </div>
+    <div class="account-panel">
+      <div class="account-section active" id="tab-profile">
+        <h3>Profile Information</h3>
+        <div class="form-row"><div class="form-group"><label>First Name</label><input type="text" id="acc-first" placeholder="John"/></div><div class="form-group"><label>Last Name</label><input type="text" id="acc-last" placeholder="Doe"/></div></div>
+        <div class="form-group"><label>Email</label><input type="email" id="acc-email" placeholder="john@email.com"/></div>
+        <div class="form-group"><label>Phone</label><input type="tel" id="acc-phone" placeholder="346 604 7133"/></div>
+        <div class="form-group"><label>Company</label><input type="text" id="acc-company" placeholder="Your Company Inc."/></div>
+        <div class="form-group"><label>Bio</label><textarea id="acc-bio" rows="3" placeholder="Tell us about yourself..."></textarea></div>
+        <button class="btn-primary" style="width:auto;padding:12px 32px;" onclick="saveProfile()">Save Changes</button>
+      </div>
+      <div class="account-section" id="tab-orders">
+        <h3>My Orders</h3>
+        <div style="background:var(--dark2);border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+          <div style="padding:20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;"><div><strong style="font-size:.9rem;">EyeScan Pro Unit</strong><br/><span style="font-size:.8rem;color:var(--muted);">Order #NG-10482 · Dec 10, 2024</span></div><div style="text-align:right;"><span style="color:var(--neon3);font-size:.8rem;background:rgba(0,255,136,0.1);padding:3px 10px;border-radius:20px;">Delivered</span><br/><span style="font-size:.9rem;font-family:'Orbitron',monospace;">$899</span></div></div>
+          <div style="padding:20px;display:flex;justify-content:space-between;align-items:center;"><div><strong style="font-size:.9rem;">CyberShield Suite — Annual</strong><br/><span style="font-size:.8rem;color:var(--muted);">Order #NG-10391 · Nov 22, 2024</span></div><div style="text-align:right;"><span style="color:var(--neon);font-size:.8rem;background:rgba(0,245,255,0.1);padding:3px 10px;border-radius:20px;">Active</span><br/><span style="font-size:.9rem;font-family:'Orbitron',monospace;">$1,599</span></div></div>
+        </div>
+        <p style="color:var(--muted);font-size:.85rem;margin-top:16px;">For order issues, contact <a href="mailto:moghalukaito@gmail.com" style="color:var(--neon);">moghalukaito@gmail.com</a> or call <a href="tel:3466047133" style="color:var(--neon);">346 604 7133</a>.</p>
+      </div>
+      <div class="account-section" id="tab-billing">
+        <h3>Billing & Payments</h3>
+        <div style="background:var(--dark2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;display:flex;gap:16px;align-items:center;"><i class="fab fa-cc-visa" style="font-size:2rem;color:#1a1f71;background:#f0f0f0;padding:8px;border-radius:6px;"></i><div><strong>Visa ending in 4242</strong><br/><span style="color:var(--muted);font-size:.85rem;">Expires 12/27 · Default card</span></div><button class="btn-outline btn-nav" style="margin-left:auto;font-size:.8rem;" onclick="showToast('Card removed.')">Remove</button></div>
+        <button class="btn-primary" style="width:auto;padding:12px 28px;" onclick="showToast('Add card via Stripe portal — configure your live key.')"><i class="fas fa-plus"></i> &nbsp;Add Payment Method</button>
+      </div>
+      <div class="account-section" id="tab-notifications">
+        <h3>Notification Preferences</h3>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--dark2);border-radius:12px;border:1px solid var(--border);"><div><strong style="font-size:.9rem;">Order Updates</strong><br/><span style="font-size:.82rem;color:var(--muted);">Shipping and delivery alerts</span></div><label class="toggle-switch" onclick="toggleSwitch(this)"><span class="toggle-track on"></span><span class="toggle-dot on"></span></label></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--dark2);border-radius:12px;border:1px solid var(--border);"><div><strong style="font-size:.9rem;">Newsletter</strong><br/><span style="font-size:.82rem;color:var(--muted);">Weekly tech insights</span></div><label class="toggle-switch" onclick="toggleSwitch(this)"><span class="toggle-track on"></span><span class="toggle-dot on"></span></label></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--dark2);border-radius:12px;border:1px solid var(--border);"><div><strong style="font-size:.9rem;">Promotions</strong><br/><span style="font-size:.82rem;color:var(--muted);">Special deals and launches</span></div><label class="toggle-switch" onclick="toggleSwitch(this)"><span class="toggle-track"></span><span class="toggle-dot"></span></label></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--dark2);border-radius:12px;border:1px solid var(--border);"><div><strong style="font-size:.9rem;">Security Alerts</strong><br/><span style="font-size:.82rem;color:var(--muted);">Login attempts and activity</span></div><label class="toggle-switch" onclick="toggleSwitch(this)"><span class="toggle-track on"></span><span class="toggle-dot on"></span></label></div>
+        </div>
+        <button class="btn-primary" style="width:auto;padding:12px 28px;margin-top:20px;" onclick="showToast('Notification preferences saved!')">Save Preferences</button>
+      </div>
+      <div class="account-section" id="tab-security">
+        <h3>Security & Privacy</h3>
+        <div class="form-group"><label>Current Password</label><input type="password" placeholder="••••••••"/></div>
+        <div class="form-group"><label>New Password</label><input type="password" placeholder="New password"/></div>
+        <div class="form-group"><label>Confirm New Password</label><input type="password" placeholder="Repeat new password"/></div>
+        <button class="btn-primary" style="width:auto;padding:12px 28px;margin-bottom:32px;" onclick="showToast('Password updated successfully!')">Update Password</button>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px;">
+          <button class="btn-outline btn-nav" style="padding:10px 18px;" onclick="showToast('Data export emailed within 24 hours.')"><i class="fas fa-download"></i> Export My Data</button>
+          <button class="btn-outline btn-nav" style="padding:10px 18px;" onclick="showToast('Scan history cleared.')"><i class="fas fa-trash"></i> Clear Scan History</button>
+        </div>
+        <div class="danger-zone">
+          <h4><i class="fas fa-triangle-exclamation"></i> Delete Account</h4>
+          <p>Permanently delete your NexGen Tech account and all associated data. This action is irreversible and cannot be undone.</p>
+          <ul class="delete-steps">
+            <li><i class="fas fa-circle"></i> Profile, settings, and preferences</li>
+            <li><i class="fas fa-circle"></i> All order history and invoices</li>
+            <li><i class="fas fa-circle"></i> Biometric scan data and records</li>
+            <li><i class="fas fa-circle"></i> Newsletter subscriptions</li>
+            <li><i class="fas fa-circle"></i> Active licenses will be deactivated</li>
+          </ul>
+          <button class="btn-danger" onclick="confirmDelete()"><i class="fas fa-trash-alt"></i> &nbsp;Delete My Account</button>
+          <div class="delete-confirm-box" id="delete-confirm">
+            <p><strong style="color:#ff4444;">⚠️ Final Confirmation Required</strong><br/>Type your email address to confirm permanent deletion.</p>
+            <div class="form-group" style="margin-bottom:14px;"><input type="email" id="delete-email-confirm" placeholder="Type your email to confirm"/></div>
+            <div class="form-group" style="margin-bottom:14px;"><input type="password" id="delete-pass-confirm" placeholder="Enter your password"/></div>
+            <div class="gdpr-check" style="margin-bottom:14px;"><input type="checkbox" id="delete-ack"/><label for="delete-ack" style="font-size:.82rem;color:var(--muted);">I understand this action is permanent and all my data will be deleted.</label></div>
+            <div class="delete-confirm-actions"><button class="btn-cancel" onclick="cancelDelete()">Cancel</button><button class="btn-danger" onclick="executeDelete()"><i class="fas fa-trash-alt"></i> Permanently Delete</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand-name" id="footer-brand-name">⚡ NEXGEN TECH</div>
+      <p>Pioneering tomorrow's technology today. We deliver futuristic solutions that transform businesses, secure data, and accelerate growth in the digital age.</p>
+      <div class="social-links">
+        <a class="social-link" href="#"><i class="fab fa-x-twitter"></i></a>
+        <a class="social-link" href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a class="social-link" href="#"><i class="fab fa-github"></i></a>
+        <a class="social-link" href="#"><i class="fab fa-youtube"></i></a>
+        <a class="social-link" href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li><li><a href="#video-guide">Video Guide</a></li><li><a href="#services">Services</a></li><li><a href="#scanner">Eye Scanner</a></li><li><a href="#shop">Shop</a></li><li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#faq">FAQ</a></li><li><a href="mailto:moghalukaito@gmail.com">moghalukaito@gmail.com</a></li><li><a href="tel:3466047133">346 604 7133</a></li><li><a href="#">Documentation</a></li><li><a href="#">Status Page</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Newsletter</h4>
+      <p style="color:var(--muted);font-size:.85rem;margin-bottom:14px;">Get weekly tech insights delivered free.</p>
+      <div class="footer-newsletter">
+        <input type="email" id="footer-nl" placeholder="your@email.com"/>
+        <button onclick="footerSubscribe()">Subscribe →</button>
+      </div>
+      <div style="margin-top:16px;">
+        <p style="font-size:.8rem;color:var(--muted);">📞 <a href="tel:3466047133" style="color:var(--muted);">346 604 7133</a></p>
+        <p style="font-size:.8rem;color:var(--muted);">✉️ <a href="mailto:moghalukaito@gmail.com" style="color:var(--muted);">moghalukaito@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 NexGen Tech. All rights reserved. Crafted with ⚡ for the future.</p>
+    <div class="legal-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a><a href="#">GDPR</a></div>
+  </div>
+</footer>
+</div><!-- /main-site -->
+
+<style>
+.toggle-switch{position:relative;display:inline-block;width:44px;height:24px;cursor:pointer;flex-shrink:0;}
+.toggle-track{position:absolute;inset:0;border-radius:24px;background:var(--border);transition:.3s;display:block;}
+.toggle-track.on{background:var(--neon);}
+.toggle-dot{position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:.3s;display:block;}
+.toggle-dot.on{transform:translateX(20px);}
+</style>
+
+<!-- ██████████████████ JAVASCRIPT ██████████████████ -->
+<script>
+/* ═══════════════ LOADER ═══════════════ */
+window.addEventListener('load',()=>{
+  setTimeout(()=>{document.getElementById('loader').classList.add('hidden');},2300);
+  initParticles();
+  initScrollSpy();
+  initCounters();
+  initVideoGuide();
+  // Check saved theme
+  const saved=localStorage.getItem('ng-theme')||'';
+  const savedId=localStorage.getItem('ng-theme-id')||'bg-opt-default';
+  if(saved)applyTheme(saved,savedId);
+});
+
+/* ═══════════════ PARTICLES ═══════════════ */
+function initParticles(){
+  ['particles'].forEach(id=>{
+    const c=document.getElementById(id);
+    if(!c)return;
+    const colors=['#00f5ff','#bf00ff','#00ff88','#ffffff'];
+    for(let i=0;i<35;i++){
+      const p=document.createElement('div');
+      p.className='particle';
+      const sz=Math.random()*4+2;
+      p.style.cssText=`width:${sz}px;height:${sz}px;background:${colors[Math.floor(Math.random()*colors.length)]};left:${Math.random()*100}%;animation-duration:${Math.random()*15+10}s;animation-delay:-${Math.random()*20}s;`;
+      c.appendChild(p);
+    }
+  });
+  // Also add to age gate background
+  const ag=document.createElement('div');
+  ag.style.cssText='position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0;';
+  ag.id='age-particles';
+  document.getElementById('age-gate').prepend(ag);
+  const colors=['#00f5ff','#bf00ff'];
+  for(let i=0;i<20;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    const sz=Math.random()*3+1;
+    p.style.cssText=`width:${sz}px;height:${sz}px;background:${colors[i%2]};left:${Math.random()*100}%;animation-duration:${Math.random()*12+8}s;animation-delay:-${Math.random()*15}s;`;
+    ag.appendChild(p);
+  }
+}
+
+/* ═══════════════ AGE GATE ═══════════════ */
+let selectedAgeGroup=null;
+let ageType=null;
+
+function selectAge(btn,group,type){
+  document.querySelectorAll('.age-btn').forEach(b=>{b.classList.remove('selected');});
+  btn.classList.add('selected');
+  selectedAgeGroup=group;
+  ageType=type;
+  const warn=document.getElementById('age-warning');
+  const proceed=document.getElementById('age-proceed-btn');
+  if(type==='deny'){
+    warn.style.display='block';
+    proceed.disabled=true;
+    proceed.innerHTML='<i class="fas fa-ban"></i> &nbsp;ACCESS DENIED';
+  } else {
+    warn.style.display='none';
+    proceed.disabled=false;
+    proceed.innerHTML='<i class="fas fa-shield-halved"></i> &nbsp;CONFIRM & ENTER';
+  }
+}
+
+function proceedFromAge(){
+  if(ageType==='deny')return;
+  document.getElementById('age-gate').style.display='none';
+  document.getElementById('auth-overlay').classList.add('show');
+}
+
+/* ═══════════════ AUTH ═══════════════ */
+function switchAuth(tab){
+  document.querySelectorAll('.auth-tab').forEach((t,i)=>{t.classList.toggle('active',(tab==='login'&&i===0)||(tab==='register'&&i===1));});
+  document.getElementById('auth-login').classList.toggle('active',tab==='login');
+  document.getElementById('auth-register').classList.toggle('active',tab==='register');
+}
+
+function doLogin(){
+  const email=document.getElementById('login-email').value.trim();
+  const pass=document.getElementById('login-pass').value;
+  if(!email||!pass){showToast('Please fill in all fields.','error');return;}
+  if(!email.includes('@')){showToast('Enter a valid email address.','error');return;}
+  currentUser={name:email.split('@')[0],email};
+  enterSite();
+}
+
+function doRegister(){
+  const name=document.getElementById('reg-name').value.trim();
+  const email=document.getElementById('reg-email').value.trim();
+  const pass=document.getElementById('reg-pass').value;
+  const pass2=document.getElementById('reg-pass2').value;
+  const terms=document.getElementById('reg-terms').checked;
+  if(!name||!email||!pass||!pass2){showToast('Please complete all fields.','error');return;}
+  if(pass!==pass2){showToast('Passwords do not match.','error');return;}
+  if(pass.length<8){showToast('Password must be at least 8 characters.','error');return;}
+  if(!terms){showToast('Please accept the terms.','error');return;}
+  currentUser={name,email};
+  showToast('🎉 Account created! Welcome to NexGen Tech.');
+  enterSite();
+}
+
+function socialLogin(provider){
+  currentUser={name:provider+' User',email:'user@'+provider.toLowerCase()+'.com'};
+  showToast('Signed in with '+provider+'!');
+  enterSite();
+}
+
+function showForgot(){
+  const email=prompt('Enter your email for password reset:');
+  if(email&&email.includes('@'))showToast('Reset link sent to '+email);
+}
+
+let currentUser=null;
+
+function enterSite(){
+  document.getElementById('auth-overlay').classList.remove('show');
+  document.getElementById('main-site').style.display='block';
+  document.getElementById('account').style.display='none';
+  if(currentUser){
+    const n=currentUser.name;
+    document.getElementById('acc-display-name').textContent=n;
+    document.getElementById('acc-display-email').textContent=currentUser.email;
+    document.getElementById('acc-avatar-icon').innerHTML=`<span style="font-size:1.8rem;font-weight:700;">${n.charAt(0).toUpperCase()}</span>`;
+    document.getElementById('acc-first').value=n.split(' ')[0]||'';
+    document.getElementById('acc-last').value=n.split(' ')[1]||'';
+    document.getElementById('acc-email').value=currentUser.email;
+  }
+}
+
+function doLogout(){
+  if(confirm('Are you sure you want to sign out?')){
+    currentUser=null;
+    document.getElementById('main-site').style.display='none';
+    document.getElementById('auth-overlay').classList.add('show');
+  }
+}
+
+/* ═══════════════ NAV ═══════════════ */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400);
+  updateActiveNav();
+});
+
+function updateActiveNav(){
+  const sections=['home','video-guide','services','scanner','shop','bg-settings','newsletter','contact','faq'];
+  let current='';
+  sections.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)current=id;});
+  document.querySelectorAll('.nav-links a').forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+current);});
+}
+
+function scrollTo(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'});}
+function toggleMobile(){document.getElementById('mobile-menu').classList.toggle('open');}
+function closeMobile(){document.getElementById('mobile-menu').classList.remove('open');}
+
+function initScrollSpy(){
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href').slice(1);
+      const el=document.getElementById(id);
+      if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}
+    });
+  });
+}
+
+/* ═══════════════ LOGO UPLOAD ═══════════════ */
+function uploadLogo(input){
+  if(!input.files[0])return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    const src=e.target.result;
+    document.getElementById('nav-logo-container').innerHTML=`<img src="${src}" alt="Logo"/>`;
+    document.getElementById('footer-brand-name').innerHTML=`<img src="${src}" alt="Logo" style="height:32px;vertical-align:middle;margin-right:8px;border-radius:5px;"/>NexGen Tech`;
+    showToast('Logo uploaded!');
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+
+/* ═══════════════ COUNTERS ═══════════════ */
+function initCounters(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const el=e.target,target=+el.dataset.count,step=Math.ceil(target/80);
+        let c=0;
+        const t=setInterval(()=>{c=Math.min(c+step,target);el.textContent=c.toLocaleString();if(c>=target){clearInterval(t);}},20);
+        obs.unobserve(el);
+      }
+    });
+  },{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(el=>obs.observe(el));
+}
+
+/* ═══════════════ THEME SYSTEM ═══════════════ */
+const themes={
+  '':['t-default','bg-opt-default'],
+  'theme-emerald':['t-emerald','bg-opt-emerald'],
+  'theme-sunset':['t-sunset','bg-opt-sunset'],
+  'theme-galaxy':['t-galaxy','bg-opt-galaxy'],
+  'theme-gold':['t-gold','bg-opt-gold'],
+  'theme-ice':['t-ice','bg-opt-ice'],
+};
+
+function applyTheme(cls,bgOptId){
+  const body=document.body;
+  Object.keys(themes).forEach(c=>{if(c)body.classList.remove(c);});
+  if(cls)body.classList.add(cls);
+  // Update floating panel
+  document.querySelectorAll('.theme-option').forEach(o=>o.classList.remove('active'));
+  const tId=Object.entries(themes).find(([k])=>k===cls)?.[1]?.[0];
+  if(tId)document.getElementById(tId)?.classList.add('active');
+  // Update bg section
+  document.querySelectorAll('.bg-option').forEach(o=>o.classList.remove('active'));
+  if(bgOptId)document.getElementById(bgOptId)?.classList.add('active');
+}
+
+function setTheme(cls,name){
+  const [tId,bgId]=themes[cls]||['t-default','bg-opt-default'];
+  applyTheme(cls,bgId);
+  localStorage.setItem('ng-theme',cls);
+  localStorage.setItem('ng-theme-id',bgId);
+  showToast('🎨 Theme switched to '+name);
+  document.getElementById('theme-panel').classList.remove('open');
+}
+
+function setThemeFull(cls,bgOptId,name){
+  applyTheme(cls,bgOptId);
+  localStorage.setItem('ng-theme',cls);
+  localStorage.setItem('ng-theme-id',bgOptId);
+  showToast('🎨 Theme switched to '+name);
+}
+
+function toggleThemePanel(){document.getElementById('theme-panel').classList.toggle('open');}
+document.addEventListener('click',e=>{
+  const picker=document.getElementById('theme-picker');
+  if(picker&&!picker.contains(e.target))document.getElementById('theme-panel').classList.remove('open');
+});
+
+/* ═══════════════ VIDEO GUIDE — CANVAS ANIMATION ═══════════════ */
+let videoState={playing:false,time:0,duration:60,muted:false,rafId:null,lastTs:null};
+const chapters=[
+  {start:0,end:10,title:'Welcome to NexGen Tech',subtitle:'Your futuristic tech solutions platform',color:'#00f5ff',icon:'⚡'},
+  {start:10,end:20,title:'Our Premium Services',subtitle:'AI · Cybersecurity · Cloud · IoT · Analytics',color:'#bf00ff',icon:'🚀'},
+  {start:20,end:30,title:'Laser Eye Scanner',subtitle:'99.97% accuracy biometric identification',color:'#00ff88',icon:'👁'},
+  {start:30,end:40,title:'Shop & Secure Checkout',subtitle:'Stripe payments + promo codes',color:'#ffd700',icon:'🛒'},
+  {start:40,end:50,title:'Book Appointments',subtitle:'Video · Phone · In-Person · Demo',color:'#c084fc',icon:'📅'},
+  {start:50,end:60,title:'Contact & Support',subtitle:'moghalukaito@gmail.com · 346 604 7133',color:'#7dd3fc',icon:'📞'},
+];
+
+function initVideoGuide(){
+  const canvas=document.getElementById('guide-canvas');
+  const player=document.getElementById('video-player');
+  canvas.width=player.offsetWidth||900;
+  canvas.height=Math.round(canvas.width*(9/16));
+  window.addEventListener('resize',()=>{
+    canvas.width=player.offsetWidth||900;
+    canvas.height=Math.round(canvas.width*(9/16));
+    drawFrame(canvas,videoState.time);
+  });
+  drawFrame(canvas,0);
+}
+
+function drawFrame(canvas,t){
+  const ctx=canvas.getContext('2d');
+  const W=canvas.width,H=canvas.height;
+  const ch=chapters.find(c=>t>=c.start&&t<c.end)||chapters[chapters.length-1];
+  const progress=(t-ch.start)/(ch.end-ch.start);
+
+  // Background
+  const grad=ctx.createLinearGradient(0,0,W,H);
+  grad.addColorStop(0,'#050a14');
+  grad.addColorStop(1,'#0a1628');
+  ctx.fillStyle=grad;
+  ctx.fillRect(0,0,W,H);
+
+  // Grid lines
+  ctx.strokeStyle='rgba(0,245,255,0.04)';
+  ctx.lineWidth=1;
+  for(let x=0;x<W;x+=50){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+  for(let y=0;y<H;y+=50){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+
+  // Animated orb
+  const orbX=W*0.75+Math.sin(t*0.3)*40;
+  const orbY=H*0.3+Math.cos(t*0.2)*30;
+  const orbGrad=ctx.createRadialGradient(orbX,orbY,0,orbX,orbY,200);
+  orbGrad.addColorStop(0,ch.color+'33');
+  orbGrad.addColorStop(1,'transparent');
+  ctx.fillStyle=orbGrad;
+  ctx.fillRect(0,0,W,H);
+
+  // Chapter number badge
+  const chIdx=chapters.indexOf(ch)+1;
+  ctx.fillStyle=ch.color+'22';
+  ctx.beginPath();ctx.roundRect(30,22,120,34,17);ctx.fill();
+  ctx.strokeStyle=ch.color+'66';ctx.lineWidth=1;
+  ctx.beginPath();ctx.roundRect(30,22,120,34,17);ctx.stroke();
+  ctx.fillStyle=ch.color;
+  ctx.font=`600 ${Math.max(11,W*0.013)}px Inter,sans-serif`;
+  ctx.fillText(`CHAPTER ${chIdx} / 6`,44,44);
+
+  // Time badge top right
+  const timeStr=formatTime(Math.floor(t));
+  ctx.fillStyle='rgba(0,0,0,0.5)';
+  ctx.beginPath();ctx.roundRect(W-90,22,70,30,15);ctx.fill();
+  ctx.fillStyle='#e8f4fd';
+  ctx.font=`bold ${Math.max(10,W*0.012)}px "Orbitron",monospace`;
+  ctx.fillText(timeStr,W-74,42);
+
+  // Big icon
+  const iconSize=Math.max(32,H*0.12);
+  ctx.font=`${iconSize}px serif`;
+  ctx.textAlign='center';
+  ctx.fillText(ch.icon,W*0.18,H*0.42);
+
+  // Title
+  ctx.textAlign='left';
+  ctx.fillStyle='#ffffff';
+  const titleSize=Math.max(16,W*0.032);
+  ctx.font=`bold ${titleSize}px "Orbitron",monospace`;
+  wrapText(ctx,ch.title,W*0.28,H*0.38,W*0.65,titleSize*1.4);
+
+  // Subtitle
+  const subSize=Math.max(10,W*0.018);
+  ctx.fillStyle=ch.color;
+  ctx.font=`${subSize}px Inter,sans-serif`;
+  ctx.fillText(ch.subtitle,W*0.28,H*0.52);
+
+  // Animated scan line
+  const scanY=H*(0.2+0.6*((t*0.5)%1));
+  const scanGrad=ctx.createLinearGradient(0,scanY,W,scanY);
+  scanGrad.addColorStop(0,'transparent');
+  scanGrad.addColorStop(0.5,ch.color+'88');
+  scanGrad.addColorStop(1,'transparent');
+  ctx.strokeStyle=scanGrad;ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(0,scanY);ctx.lineTo(W,scanY);ctx.stroke();
+
+  // Progress bar (chapter)
+  const barY=H-40;
+  ctx.fillStyle='rgba(0,245,255,0.1)';
+  ctx.beginPath();ctx.roundRect(30,barY,W-60,6,3);ctx.fill();
+  ctx.fillStyle=ch.color;
+  ctx.beginPath();ctx.roundRect(30,barY,(W-60)*Math.min(progress,1),6,3);ctx.fill();
+
+  // Chapter dots
+  chapters.forEach((c,i)=>{
+    const dx=30+(W-60)*(c.start/60)+((W-60)/6)*0.5;
+    ctx.fillStyle=t>=c.start?c.color:'rgba(255,255,255,0.2)';
+    ctx.beginPath();ctx.arc(dx,barY+3,t>=c.start?5:3,0,Math.PI*2);ctx.fill();
+  });
+
+  // NexGen watermark
+  ctx.textAlign='center';
+  ctx.fillStyle='rgba(255,255,255,0.08)';
+  ctx.font=`bold ${Math.max(12,W*0.025)}px "Orbitron",monospace`;
+  ctx.fillText('NEXGEN TECH',W/2,H*0.92);
+
+  // Bottom tag
+  ctx.fillStyle='rgba(0,0,0,0.5)';
+  ctx.beginPath();ctx.roundRect(W/2-100,H-72,200,26,13);ctx.fill();
+  ctx.fillStyle='rgba(255,255,255,0.5)';
+  ctx.font=`${Math.max(9,W*0.011)}px Inter`;
+  ctx.fillText('moghalukaito@gmail.com  ·  346 604 7133',W/2,H-55);
+  ctx.textAlign='left';
+}
+
+function wrapText(ctx,text,x,y,maxW,lineH){
+  const words=text.split(' ');let line='';
+  for(let i=0;i<words.length;i++){
+    const test=line+(line?' ':'')+words[i];
+    if(ctx.measureText(test).width>maxW&&i>0){ctx.fillText(line,x,y);line=words[i];y+=lineH;}
+    else line=test;
+  }
+  ctx.fillText(line,x,y);
+}
+
+function videoLoop(ts){
+  if(!videoState.playing)return;
+  if(videoState.lastTs)videoState.time+=Math.min((ts-videoState.lastTs)/1000,0.1);
+  videoState.lastTs=ts;
+  if(videoState.time>=videoState.duration){videoState.time=videoState.duration;videoState.playing=false;document.getElementById('play-icon').className='fas fa-play';}
+  const canvas=document.getElementById('guide-canvas');
+  drawFrame(canvas,videoState.time);
+  updateVideoUI();
+  if(videoState.playing)videoState.rafId=requestAnimationFrame(videoLoop);
+}
+
+function togglePlay(){
+  const canvas=document.getElementById('guide-canvas');
+  if(videoState.time>=videoState.duration)videoState.time=0;
+  videoState.playing=!videoState.playing;
+  videoState.lastTs=null;
+  document.getElementById('play-icon').className=videoState.playing?'fas fa-pause':'fas fa-play';
+  if(videoState.playing){videoState.rafId=requestAnimationFrame(videoLoop);}
+  else{cancelAnimationFrame(videoState.rafId);drawFrame(canvas,videoState.time);}
+}
+
+function updateVideoUI(){
+  const pct=(videoState.time/videoState.duration)*100;
+  document.getElementById('vc-bar').style.width=pct+'%';
+  document.getElementById('vc-time').textContent=formatTime(Math.floor(videoState.time))+' / 1:00';
+  // Chapter buttons
+  const chIdx=chapters.findIndex(c=>videoState.time>=c.start&&videoState.time<c.end);
+  document.querySelectorAll('.chapter-btn').forEach((b,i)=>b.classList.toggle('active-ch',i===chIdx));
+}
+
+function seekVideo(e){
+  const bar=document.getElementById('vc-progress');
+  const rect=bar.getBoundingClientRect();
+  const pct=Math.min(1,Math.max(0,(e.clientX-rect.left)/rect.width));
+  videoState.time=pct*videoState.duration;
+  videoState.lastTs=null;
+  const canvas=document.getElementById('guide-canvas');
+  drawFrame(canvas,videoState.time);
+  updateVideoUI();
+}
+
+function jumpTo(sec){
+  videoState.time=sec;videoState.lastTs=null;
+  const canvas=document.getElementById('guide-canvas');
+  drawFrame(canvas,videoState.time);updateVideoUI();
+  if(!videoState.playing){togglePlay();}
+}
+
+function toggleMute(){
+  videoState.muted=!videoState.muted;
+  document.getElementById('vol-icon').className=videoState.muted?'fas fa-volume-mute':'fas fa-volume-up';
+}
+
+function toggleFS(){
+  const p=document.getElementById('video-player');
+  if(document.fullscreenElement){document.exitFullscreen();}
+  else{p.requestFullscreen();}
+}
+
+function formatTime(sec){const m=Math.floor(sec/60);const s=sec%60;return`${m}:${s.toString().padStart(2,'0')}`;}
+
+/* ═══════════════ SCANNER ═══════════════ */
+let scanning=false;
+function startScan(){
+  if(scanning)return;scanning=true;
+  const status=document.getElementById('scanner-status');
+  const line=document.getElementById('scan-line');
+  const result=document.getElementById('scan-result');
+  const btn=document.getElementById('scan-btn');
+  result.classList.remove('show');btn.disabled=true;
+  btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> SCANNING...';
+  line.classList.add('active');
+  const msgs=['INITIALIZING LASER ARRAY...','CALIBRATING SENSORS...','CAPTURING IRIS DATA...','ANALYZING 1,247 POINTS...','CROSS-REFERENCING DATABASE...','ENCRYPTING DATA...','VERIFYING IDENTITY...'];
+  let i=0;
+  const intv=setInterval(()=>{
+    if(i<msgs.length){status.textContent=msgs[i++];}
+    else{clearInterval(intv);line.classList.remove('active');status.textContent='✓ SCAN COMPLETE — IDENTITY VERIFIED';result.classList.add('show');btn.disabled=false;btn.innerHTML='<i class="fas fa-redo"></i> &nbsp;SCAN AGAIN';scanning=false;showToast('✓ Biometric scan complete. Identity verified.');}
+  },500);
+}
+
+/* ═══════════════ CHECKOUT ═══════════════ */
+let checkoutItem={name:'',basePrice:0,finalPrice:0};
+const promos={NEXGEN20:{type:'percent',value:20},WELCOME50:{type:'fixed',value:50},TECH15:{type:'percent',value:15},LAUNCH30:{type:'percent',value:30}};
+let stripe,cardElement;
+try{
+  stripe=Stripe('pk_test_placeholder_replace_with_your_live_key');
+  const els=stripe.elements();
+  cardElement=els.create('card',{style:{base:{color:'#e8f4fd',fontFamily:'Inter,sans-serif',fontSize:'15px','::placeholder':{color:'#7a9bb8'}},invalid:{color:'#ff4444'}}});
+}catch(e){console.warn('Stripe demo mode.');}
+
+function openCheckout(name,price){
+  checkoutItem={name,basePrice:price,finalPrice:price};
+  document.getElementById('checkout-item-name').textContent=name;
+  document.getElementById('checkout-item-price').textContent='$'+price.toLocaleString();
+  document.getElementById('checkout-total').textContent='$'+price.toLocaleString();
+  document.getElementById('promo-input').value='';
+  document.getElementById('promo-msg').textContent='';
+  document.getElementById('promo-row-display').style.display='none';
+  document.getElementById('payment-message').textContent='';
+  document.getElementById('checkout-modal').classList.add('open');
+  setTimeout(()=>{try{if(cardElement)cardElement.mount('#card-element');}catch(e){document.getElementById('card-element').innerHTML='<div style="color:var(--muted);font-size:.85rem;padding:8px;">🔒 Configure Stripe with your live publishable key</div>';}},100);
+}
+
+function closeCheckout(){
+  document.getElementById('checkout-modal').classList.remove('open');
+  try{if(cardElement)cardElement.unmount();}catch(e){}
+}
+
+function applyPromo(){
+  const code=document.getElementById('promo-input').value.trim().toUpperCase();
+  const msg=document.getElementById('promo-msg');
+  const base=checkoutItem.basePrice;
+  if(!code){msg.style.color='#ff4444';msg.textContent='Please enter a promo code.';return;}
+  const promo=promos[code];
+  if(!promo){msg.style.color='#ff4444';msg.textContent='Invalid code. Try NEXGEN20, WELCOME50, or TECH15.';return;}
+  const discount=promo.type==='percent'?Math.round(base*(promo.value/100)):Math.min(promo.value,base);
+  checkoutItem.finalPrice=base-discount;
+  document.getElementById('promo-discount-val').textContent='-$'+discount.toLocaleString();
+  document.getElementById('promo-row-display').style.display='flex';
+  document.getElementById('checkout-total').textContent='$'+checkoutItem.finalPrice.toLocaleString();
+  msg.style.color='var(--neon3)';msg.textContent=`✓ Saved $${discount}!`;
+}
+
+async function submitPayment(){
+  const name=document.getElementById('card-name').value.trim();
+  const btn=document.getElementById('pay-btn');
+  const msgEl=document.getElementById('payment-message');
+  if(!name){msgEl.textContent='Please enter cardholder name.';return;}
+  btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> &nbsp;PROCESSING...';msgEl.textContent='';
+  await new Promise(r=>setTimeout(r,2000));
+  btn.disabled=false;btn.innerHTML='<i class="fas fa-lock"></i> &nbsp;PAY SECURELY';
+  closeCheckout();
+  showToast(`✅ Payment of $${checkoutItem.finalPrice.toLocaleString()} confirmed for ${checkoutItem.name}!`);
+}
+
+/* ═══════════════ APPOINTMENT ═══════════════ */
+function selectAppt(el){document.querySelectorAll('.appt-option').forEach(o=>o.classList.remove('selected'));el.classList.add('selected');}
+function bookAppointment(){
+  const dt=document.getElementById('appt-datetime').value;
+  const sel=document.querySelector('.appt-option.selected');
+  if(!dt){showToast('Please select a date and time.','error');return;}
+  showToast(`📅 ${sel?sel.textContent.trim():'Appointment'} booked for ${new Date(dt).toLocaleString()}!`);
+}
+
+/* ═══════════════ ORDER ═══════════════ */
+let orderQty=1;
+function changeQty(d){orderQty=Math.max(1,Math.min(99,orderQty+d));document.getElementById('qty-display').textContent=orderQty;}
+function submitOrder(){
+  const name=document.getElementById('ord-name').value.trim();
+  const email=document.getElementById('ord-email').value.trim();
+  const svc=document.getElementById('ord-service').value;
+  if(!name||!email||!svc){showToast('Please fill all required fields.','error');return;}
+  if(!email.includes('@')){showToast('Enter a valid email.','error');return;}
+  showToast(`✅ Order submitted! Qty: ${orderQty} × ${svc}. We'll contact ${email} within 24 hrs.`);
+  ['ord-name','ord-email','ord-notes'].forEach(id=>{document.getElementById(id).value='';});
+  document.getElementById('ord-service').value='';
+  orderQty=1;document.getElementById('qty-display').textContent='1';
+}
+
+/* ═══════════════ NEWSLETTER ═══════════════ */
+function subscribeNewsletter(){
+  const email=document.getElementById('nl-email').value.trim();
+  const gdpr=document.getElementById('nl-gdpr').checked;
+  if(!email||!email.includes('@')){showToast('Please enter a valid email.','error');return;}
+  if(!gdpr){showToast('Please accept the consent checkbox.','error');return;}
+  document.getElementById('sub-success').classList.add('show');
+  document.getElementById('nl-email').value='';
+  showToast('🎉 Subscribed! Welcome email sent to '+email);
+}
+function footerSubscribe(){
+  const email=document.getElementById('footer-nl').value.trim();
+  if(!email||!email.includes('@')){showToast('Please enter a valid email.','error');return;}
+  showToast('✅ Newsletter confirmed for '+email);
+  document.getElementById('footer-nl').value='';
+}
+
+/* ═══════════════ CONTACT ═══════════════ */
+function submitContact(){
+  const first=document.getElementById('c-first').value.trim();
+  const email=document.getElementById('c-email').value.trim();
+  const msg=document.getElementById('c-message').value.trim();
+  if(!first||!email||!msg){showToast('Please fill all required fields.','error');return;}
+  if(!email.includes('@')){showToast('Enter a valid email.','error');return;}
+  showToast(`✅ Message sent! We'll reply to ${email} within 2 business hours.`);
+  ['c-first','c-last','c-email','c-phone','c-message'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+}
+
+/* ═══════════════ FAQ ═══════════════ */
+function toggleFaq(el){
+  const item=el.closest('.faq-item');
+  const open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f=>f.classList.remove('open'));
+  if(!open)item.classList.add('open');
+}
+
+/* ═══════════════ ACCOUNT ═══════════════ */
+function showAccountPanel(){
+  const acc=document.getElementById('account');
+  const visible=acc.style.display==='block';
+  acc.style.display=visible?'none':'block';
+  if(!visible)acc.scrollIntoView({behavior:'smooth'});
+}
+
+function showAccTab(tab,link){
+  document.querySelectorAll('.account-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.account-nav a').forEach(a=>a.classList.remove('active'));
+  document.getElementById('tab-'+tab)?.classList.add('active');
+  if(link)link.classList.add('active');
+  return false;
+}
+
+function saveProfile(){
+  const name=(document.getElementById('acc-first').value+' '+document.getElementById('acc-last').value).trim();
+  if(name&&currentUser){currentUser.name=name;document.getElementById('acc-display-name').textContent=name;document.getElementById('acc-avatar-icon').innerHTML=`<span style="font-size:1.8rem;font-weight:700;">${name.charAt(0).toUpperCase()}</span>`;}
+  showToast('Profile updated!');
+}
+
+function toggleSwitch(label){
+  const track=label.querySelector('.toggle-track');
+  const dot=label.querySelector('.toggle-dot');
+  const isOn=track.classList.contains('on');
+  track.classList.toggle('on',!isOn);
+  dot.classList.toggle('on',!isOn);
+  track.style.background=!isOn?'var(--neon)':'var(--border)';
+}
+
+function confirmDelete(){document.getElementById('delete-confirm').classList.add('show');}
+function cancelDelete(){document.getElementById('delete-confirm').classList.remove('show');document.getElementById('delete-email-confirm').value='';document.getElementById('delete-pass-confirm').value='';document.getElementById('delete-ack').checked=false;}
+
+function executeDelete(){
+  const email=document.getElementById('delete-email-confirm').value.trim();
+  const pass=document.getElementById('delete-pass-confirm').value;
+  const ack=document.getElementById('delete-ack').checked;
+  if(!email||!pass){showToast('Please fill email and password.','error');return;}
+  if(email!==currentUser?.email){showToast('Email does not match your account.','error');return;}
+  if(!ack){showToast('Please acknowledge the deletion terms.','error');return;}
+  showToast('Account deletion initiated. All data removed within 30 days.');
+  setTimeout(()=>{
+    currentUser=null;
+    document.getElementById('main-site').style.display='none';
+    document.getElementById('auth-overlay').classList.add('show');
+    switchAuth('login');
+    alert('Your account has been scheduled for deletion.\nA confirmation email has been sent to '+email+'.');
+  },2000);
+}
+
+/* ═══════════════ TOAST ═══════════════ */
+function showToast(msg,type='success'){
+  const t=document.getElementById('toast');
+  const ic=document.getElementById('toast-icon');
+  document.getElementById('toast-msg').textContent=msg;
+  ic.className=type==='error'?'fas fa-exclamation-circle':'fas fa-check-circle';
+  ic.style.color=type==='error'?'#ff4444':'var(--neon3)';
+  t.style.borderColor=type==='error'?'#ff4444':'var(--neon3)';
+  t.classList.add('show');
+  clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),4500);
+}
+</script>
+</body>
+</html>
